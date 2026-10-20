@@ -14,21 +14,7 @@ public class Player : MonoBehaviour
 
     public void Update()
     {
-        switch (_movementController.MoveDirection)
-        {
-            case Global.Direction.Right:
-                transform.eulerAngles = new Vector3(0, 0, 0);
-                break;
-            case Global.Direction.Up:
-                transform.eulerAngles = new Vector3(0, 0, 90);
-                break;
-            case Global.Direction.Left:
-                transform.eulerAngles = new Vector3(0, 0, 180);
-                break;
-            case Global.Direction.Down:
-                transform.eulerAngles = new Vector3(0, 0, 270);
-                break;
-        }
+
     }
 
 }

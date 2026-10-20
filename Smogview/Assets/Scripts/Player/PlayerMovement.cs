@@ -12,7 +12,9 @@ public class PlayerMovement : MonoBehaviour
     private bool _moving = false;
 
     
-
+    /// <summary>
+    /// Returns the direction the player is moving in based on the input vector
+    /// </summary>
     public Global.Direction MoveDirection
     {
         get
@@ -39,17 +41,18 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Moves the rigidbody and rotates the object based on move direction
+    /// </summary>
     void FixedUpdate()
     {
-        Debug.Log(MoveDirection);
+        //Moving
         if(_moving)
         {
             _rb.MovePosition(_rb.position + _input * _moveSpeed * Time.fixedDeltaTime);
@@ -58,9 +61,30 @@ public class PlayerMovement : MonoBehaviour
         {
             _moving = false;
         }
-        
+
+
+        //Rotate player based on move direction
+        switch (MoveDirection)
+        {
+            case Global.Direction.Right:
+                transform.eulerAngles = new Vector3(0, 0, 0);
+                break;
+            case Global.Direction.Up:
+                transform.eulerAngles = new Vector3(0, 0, 90);
+                break;
+            case Global.Direction.Left:
+                transform.eulerAngles = new Vector3(0, 0, 180);
+                break;
+            case Global.Direction.Down:
+                transform.eulerAngles = new Vector3(0, 0, 270);
+                break;
+        }
+
     }
 
+    /// <summary>
+    /// Recieves the movement vector from the input map
+    /// </summary>
     public void Move(InputAction.CallbackContext context)
     {
         _input = context.action.ReadValue<Vector2>();
