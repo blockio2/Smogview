@@ -27,7 +27,7 @@ public class lensSwitching : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        switch (lens)
+        switch (state)
         { 
         
         
