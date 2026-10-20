@@ -3,11 +3,11 @@
     "name": "PlayerMovementInput",
     "maps": [
         {
-            "name": "Movement",
+            "name": "Player",
             "id": "b9663738-6138-4082-92b3-8cb74048eb39",
             "actions": [
                 {
-                    "name": "movement",
+                    "name": "Movement",
                     "type": "Value",
                     "id": "8a6f79ec-a1e0-4eda-8429-6fd0de0e85d4",
                     "expectedControlType": "Vector2",
@@ -17,7 +17,7 @@
                     "priority": 0
                 },
                 {
-                    "name": "interact",
+                    "name": "Interact",
                     "type": "Button",
                     "id": "12cfa2f1-a794-48b7-a9f2-62090d09925d",
                     "expectedControlType": "",
@@ -27,7 +27,7 @@
                     "priority": 0
                 },
                 {
-                    "name": "Switch emotions",
+                    "name": "Switch Emotions",
                     "type": "Button",
                     "id": "650be222-09d8-4b7a-8d12-f42ab27db92a",
                     "expectedControlType": "",
@@ -45,7 +45,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";keyboard",
-                    "action": "interact",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -56,7 +56,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Controller",
-                    "action": "interact",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -67,7 +67,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";gamepad;Controller",
-                    "action": "movement",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -78,7 +78,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "movement",
+                    "action": "Movement",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -89,7 +89,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard;keyboard",
-                    "action": "movement",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -100,7 +100,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard;keyboard",
-                    "action": "movement",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -111,7 +111,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard;keyboard",
-                    "action": "movement",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -122,7 +122,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard;keyboard",
-                    "action": "movement",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -133,7 +133,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";keyboard",
-                    "action": "Switch emotions",
+                    "action": "Switch Emotions",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -144,7 +144,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";keyboard",
-                    "action": "Switch emotions",
+                    "action": "Switch Emotions",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -155,7 +155,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";keyboard",
-                    "action": "Switch emotions",
+                    "action": "Switch Emotions",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -166,7 +166,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Controller",
-                    "action": "Switch emotions",
+                    "action": "Switch Emotions",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -177,7 +177,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Controller",
-                    "action": "Switch emotions",
+                    "action": "Switch Emotions",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -188,7 +188,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Controller",
-                    "action": "Switch emotions",
+                    "action": "Switch Emotions",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
