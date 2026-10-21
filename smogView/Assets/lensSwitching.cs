@@ -12,16 +12,16 @@ public class lensSwitching : MonoBehaviour
     public int state =0;
 
     enum lens {
-    defaul,
-    physical,
-    social
+    Ldefault,
+    Lphysical,
+    Lsocial
     }
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        lens currentlens = lens.Ldefault;
     }
 
     // Update is called once per frame
@@ -53,8 +53,10 @@ public class lensSwitching : MonoBehaviour
 
     public void swtiching(InputAction.CallbackContext context)
     {
-        //state = context.
-
+        string num = context.control.name;
+        Debug.Log(num);
+       // int sate =  
+        
     }
 
 
