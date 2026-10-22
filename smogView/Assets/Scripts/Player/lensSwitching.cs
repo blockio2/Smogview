@@ -5,9 +5,11 @@ using UnityEngine.InputSystem;
 public class lensSwitching : MonoBehaviour
 {
 
-    [SerializeField] private TagHandle defaultLayer;
-    [SerializeField] private TagHandle physicalLayer;
-    [SerializeField] private TagHandle socialLensLayer;
+    [SerializeField] private TagHandle defaultTag;
+    [SerializeField] private TagHandle physicalTag;
+    [SerializeField] private TagHandle socialLensTag;
+
+    [SerializeField] private GameObject listOfObjects;
 
     lens currentlens;
     public int state =0;
@@ -29,30 +31,39 @@ public class lensSwitching : MonoBehaviour
     void Update()
     {
         switch (currentlens)
-        { 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        {
+            case lens.Ldefault:
+                listOfObjects.SendMessage("StateChange",defaultTag.ToString() );
+                break;
+
+            case lens.Lphysical:
+                listOfObjects.SendMessage("StateChange", physicalTag.ToString());
+                break;
+
+            case lens.Lsocial:
+                listOfObjects.SendMessage("StateChange", socialLensTag.ToString());
+                break;
+
+            default:
+                Debug.Log("broken");
+                listOfObjects.SendMessage("StateChange", defaultTag.ToString());
+                break;
         }
-
-
 
     }
 
-    public void swtiching(InputAction.CallbackContext context)
+
+    public void Deactivate(TagHandle tag )
+    {
+
+    }
+
+    /// <summary>
+    /// called when the player presses 1,2,3(currently) 
+    /// check which key is pressed and switches the Enum to the proper state
+    /// </summary>
+    /// <param name="context"></param>
+    public void Switching(InputAction.CallbackContext context)
     {
         //Name of key pressed
         switch (context.control.name)
@@ -73,11 +84,9 @@ public class lensSwitching : MonoBehaviour
                 currentlens = lens.Ldefault;
                 Debug.Log("broken");
                 break;
-
-
         }
         
-        
+
     }
 
 
