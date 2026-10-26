@@ -84,7 +84,6 @@ public class LensSwitching : MonoBehaviour
     /// <param name="context">the info unity provides when a key is pressed</param>
     public void SetLens(InputAction.CallbackContext context)
     {
-        Debug.Log("called");
         //Name of key pressed
         switch (context.control.name)
         {
