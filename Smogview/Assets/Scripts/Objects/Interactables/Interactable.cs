@@ -14,6 +14,7 @@ public abstract class Interactable : MonoBehaviour
 
     public virtual void Awake()
     {
+        //Get the reference to all attached interactions
         foreach (Interaction interaction in GetComponents<Interaction>()) {
             _activeInteractions.Add(interaction);
         }
@@ -21,6 +22,9 @@ public abstract class Interactable : MonoBehaviour
 
     public abstract void OnInteract();
 
+    /// <summary>
+    /// Runs the interaction behavior for each attached interactable
+    /// </summary>
     public virtual void ActivateInteractions()
     {
         foreach (Interaction interaction in _activeInteractions)

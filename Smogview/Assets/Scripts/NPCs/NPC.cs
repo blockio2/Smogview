@@ -33,15 +33,22 @@ public class NPC : Interactable
     {
         EndDialogue();
     }
+
+    /// <summary>
+    /// Activate the text panel and move it below the NPC
+    /// </summary>
     public override void OnInteract()
     {
-
         _npcTextArea.SetActive(true);
         _npcTextArea.transform.position = new Vector2(transform.position.x, transform.position.y - 1.2f);
 
         ShowDialogue();
     }
 
+    /// <summary>
+    /// Load the DialogueAsset text into the text area based on how much has been scene
+    /// Starts a coroutine to clear the dialogue
+    /// </summary>
     public void ShowDialogue()
     {
         StopAllCoroutines();
@@ -73,6 +80,9 @@ public class NPC : Interactable
         StartCoroutine("DialogueClearTimer");
     }
 
+    /// <summary>
+    /// Hide dialogue area
+    /// </summary>
     public void EndDialogue()
     {
         if(_npcTextArea)
