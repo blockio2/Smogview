@@ -1,4 +1,3 @@
-using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -8,7 +7,6 @@ using System.Collections.Generic;
 /// </summary>
 public abstract class Interactable : MonoBehaviour
 {
-    [SerializeField] public List<Interaction> interactions;
     private List<Interaction> _activeInteractions = new List<Interaction>();
 
 
@@ -16,14 +14,10 @@ public abstract class Interactable : MonoBehaviour
 
     public virtual void Awake()
     {
-        foreach (Interaction interaction in interactions)
-        {
-            Interaction tempInt = Instantiate(interaction, transform);
-            tempInt.transform.SetParent(transform);
-            _activeInteractions.Add(tempInt);
+        foreach (Interaction interaction in GetComponents<Interaction>()) {
+            _activeInteractions.Add(interaction);
         }
     }
-
 
     public abstract void OnInteract();
 

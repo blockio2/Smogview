@@ -1059,6 +1059,8 @@ GameObject:
   - component: {fileID: 1905845626}
   - component: {fileID: 1905845625}
   - component: {fileID: 1905845627}
+  - component: {fileID: 1905845629}
+  - component: {fileID: 1905845628}
   m_Layer: 0
   m_Name: Button
   m_TagString: Lphysical
@@ -1154,10 +1156,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e621bd13fc9b4b446aa009400969fa90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Button
-  interactions:
-  - {fileID: 8299778114247535635, guid: 2f9a7548459f0584fb6f58ac37a77507, type: 3}
-  - {fileID: 2100479363850243171, guid: ea2b526eeac2718498af114588aca9bd, type: 3}
   _interactionArea: {fileID: 1311148064}
+--- !u!114 &1905845628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905845624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 664b81a1a7798e84491e612a3a00e66a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChangeColor
+--- !u!114 &1905845629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905845624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc165031f02513b4aae71d4997a66c16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ToggleObject
+  _linkedObject: {fileID: 1388842844}
 --- !u!1 &2031299260
 GameObject:
   m_ObjectHideFlags: 0
