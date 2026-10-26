@@ -12,6 +12,9 @@ public class Player : MonoBehaviour
 
     private ContactFilter2D _contactFilter;
     private Collider2D[] _results = new Collider2D[3];
+    private bool _nearInteractable = false;
+
+    private string _interactionHitboxName = "InteractionHitbox";
 
 
     public void Awake()
@@ -20,14 +23,38 @@ public class Player : MonoBehaviour
         _interactionCollider = transform.Find("InteractionHitbox").GetComponent<CircleCollider2D>();
         
         //Setup layer mask for detecting interactions
-        _contactFilter.SetLayerMask(LayerMask.GetMask("Interactable"));
         _contactFilter.useTriggers = true;
     }
 
 
     public void Update()
     {
+        if (_nearInteractable)
+        {
+            //ui popup?
+        }
+    }
 
+    /// <summary>
+    /// Detects when the player is staying near an interactable hitbox
+    /// </summary>
+    public void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.name == _interactionHitboxName)
+        {
+            _nearInteractable = true;
+        }
+    }
+
+    /// <summary>
+    /// When the player walks away from an interactable, update _nearInteractable
+    /// </summary>
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.name == _interactionHitboxName)
+        {
+            _nearInteractable = false;
+        }
     }
 
     /// <summary>
@@ -39,13 +66,15 @@ public class Player : MonoBehaviour
         {
             _interactionCollider.Overlap(_contactFilter, _results);
 
-            if (_results[0])
+            if (_results[0] && _results[0].name == _interactionHitboxName)
             {
                 _results[0].GetComponentInParent<Interactable>().OnInteract();
             }
 
-            _results[0] = null;
+            _results = new Collider2D[3];
         }
     }
+
+
 
 }

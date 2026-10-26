@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class cameraScript : MonoBehaviour
+public class CameraScript : MonoBehaviour
 {
     private GameObject _player;
     // Start is called once before the first execution of Update after the MonoBehaviour is created

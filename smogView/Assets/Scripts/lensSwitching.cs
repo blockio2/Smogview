@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class lensSwitching : MonoBehaviour
+public class LensSwitching : MonoBehaviour
 {
     private GameObject[] defaultObjects;
     private GameObject[] physicalObjects;
