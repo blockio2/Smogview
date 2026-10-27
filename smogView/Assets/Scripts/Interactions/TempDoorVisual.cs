@@ -16,12 +16,10 @@ public class TempDoorVisual : MonoBehaviour
         if(doorHitBox.activeSelf == false)
         {
             sr.enabled = false;
-            Debug.Log("door open " + doorHitBox);
         }
         else
         {
             sr.enabled = true;
-            Debug.Log("door closed " + doorHitBox);
         }
 
     }
