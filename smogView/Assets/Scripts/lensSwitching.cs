@@ -10,10 +10,12 @@ public class LensSwitching : MonoBehaviour
     private GameObject[] physicalObjects;
     private GameObject[] socialObjects;
 
-    [SerializeField] private List<GameObject> allLensObjects;
+    [SerializeField] private List<GameObject> allLensObjects = new List<GameObject>();
 
 
     lens currentlens;
+    public lens CurrentLens => currentlens;
+    public event System.Action<lens> LensChanged;
 
     public enum lens {
     Ldefault,
@@ -49,6 +51,7 @@ public class LensSwitching : MonoBehaviour
     {
         foreach(GameObject g in allLensObjects)
         {
+            if (g == null) continue;
             if(g.CompareTag(currentlens.ToString()))
             {
                 g.SetActive(true);
@@ -59,6 +62,7 @@ public class LensSwitching : MonoBehaviour
             }
             
         }
+        LensChanged?.Invoke(currentlens);
     }
 
 
@@ -84,6 +88,7 @@ public class LensSwitching : MonoBehaviour
     /// <param name="context">the info unity provides when a key is pressed</param>
     public void SetLens(InputAction.CallbackContext context)
     {
+        if (!context.performed) return;
         //Name of key pressed
         switch (context.control.name)
         {
@@ -114,3 +119,6 @@ public class LensSwitching : MonoBehaviour
 
 
 }
+
+
+
