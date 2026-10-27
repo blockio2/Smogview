@@ -6886,7 +6886,7 @@ GameObject:
   - component: {fileID: 1601463368}
   - component: {fileID: 1601463367}
   m_Layer: 0
-  m_Name: TEMP ENND
+  m_Name: TEMP ENND environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
