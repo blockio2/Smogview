@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: dba0c3e23cf7e83458ff25f36689a9c3
+guid: 7900ead88647a19409a45ea1f2a57453
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5864988276522048943
-    second: placeholder-player_0
+      213: -8922328891513336043
+    second: npc_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -124,14 +124,27 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: placeholder-player_0
+      name: npc_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 4
         y: 0
         width: 30
         height: 52
@@ -143,8 +156,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fad5de173cf946150800000000000000
-      internalID: 5864988276522048943
+      spriteID: 51f842c45258d2480800000000000000
+      internalID: -8922328891513336043
       vertices: []
       indices: 
       edges: []
@@ -163,7 +176,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      placeholder-player_0: 5864988276522048943
+      npc_0: -8922328891513336043
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

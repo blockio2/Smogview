@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D _rb;
 
+    private CircleCollider2D _interactionCollider;
+
     [SerializeField] private float _moveSpeed = 5f;
     private Vector2 _input;
     private bool _moving = false;
@@ -42,9 +44,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     
-    void Start()
+    void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _interactionCollider = transform.Find("InteractionHitbox").GetComponent<CircleCollider2D>();
     }
 
     /// <summary>
@@ -67,16 +70,16 @@ public class PlayerMovement : MonoBehaviour
         switch (MoveDirection)
         {
             case Global.Direction.Right:
-                transform.eulerAngles = new Vector3(0, 0, 0);
+                _interactionCollider.transform.localPosition = new Vector3(0.2f, 0f, 2);
                 break;
             case Global.Direction.Up:
-                transform.eulerAngles = new Vector3(0, 0, 90);
+                _interactionCollider.transform.localPosition = new Vector3(0.0f, 0.2f, 2);
                 break;
             case Global.Direction.Left:
-                transform.eulerAngles = new Vector3(0, 0, 180);
+                _interactionCollider.transform.localPosition = new Vector3(-0.2f, 0f, 2);
                 break;
             case Global.Direction.Down:
-                transform.eulerAngles = new Vector3(0, 0, 270);
+                _interactionCollider.transform.localPosition = new Vector3(0.0f, -0.2f, 2);
                 break;
         }
 

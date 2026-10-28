@@ -58,9 +58,11 @@ public class NPC : Interactable
         {
             _allDialogueSeen = true;
             _dialogueCounter = 0;
+            EndDialogue();
+            return; //Quit early when using EndDialogue() to prevent dialogue counter from incrementing
         }
         //Disable more dialogue indactor when the last text has been loaded
-        if(_dialogueCounter >= mainText.DialogueCount - 1)
+        if(_dialogueCounter > mainText.DialogueCount)
         {
             _moreTextIndicator.enabled = false;
         }
@@ -77,6 +79,8 @@ public class NPC : Interactable
         }
 
         _dialogueCounter++;
+
+
         StartCoroutine("DialogueClearTimer");
     }
 
