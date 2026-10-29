@@ -161,6 +161,17 @@
                 },
                 {
                     "name": "",
+                    "id": "18e15bac-3838-4f02-adcc-3c0ce7427a5c",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";keyboard",
+                    "action": "Switch Emotions",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "bf522b73-6860-4381-ab35-e76652514f42",
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",
@@ -185,6 +196,17 @@
                     "name": "",
                     "id": "a3e0a17c-f5a8-4615-8c5d-0d3c3866195d",
                     "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Controller",
+                    "action": "Switch Emotions",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f72b745e-2f9e-4bee-aa31-bf072d2b7e66",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Controller",

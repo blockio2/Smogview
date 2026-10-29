@@ -9,6 +9,7 @@ public class LensSwitching : MonoBehaviour
     private GameObject[] defaultObjects;
     private GameObject[] physicalObjects;
     private GameObject[] socialObjects;
+    private GameObject[] mentalObjects;
 
     [SerializeField] private List<GameObject> allLensObjects = new List<GameObject>();
 
@@ -20,7 +21,8 @@ public class LensSwitching : MonoBehaviour
     public enum lens {
     Ldefault,
     Lphysical,
-    Lsocial
+    Lsocial,
+    Lmental
     }
 
 
@@ -34,11 +36,12 @@ public class LensSwitching : MonoBehaviour
         defaultObjects = GameObject.FindGameObjectsWithTag("Ldefault");
         physicalObjects = GameObject.FindGameObjectsWithTag("Lphysical");
         socialObjects = GameObject.FindGameObjectsWithTag("Lsocial");
-
-         //adds them to a collective list
+        mentalObjects = GameObject.FindGameObjectsWithTag("Lmental");
+        //adds them to a collective list
         allLensObjects.AddRange(defaultObjects);
         allLensObjects.AddRange(physicalObjects);
         allLensObjects.AddRange(socialObjects);
+        allLensObjects.AddRange(mentalObjects);
 
         ActivateLen();
     }
@@ -82,7 +85,7 @@ public class LensSwitching : MonoBehaviour
 
 
     /// <summary>
-    /// called when the player presses 1,2,3(currently) 
+    /// called when the player presses 1,2,3,4(currently) 
     /// check which key is pressed and switches the Enum to the proper state
     /// </summary>
     /// <param name="context">the info unity provides when a key is pressed</param>
@@ -104,6 +107,11 @@ public class LensSwitching : MonoBehaviour
 
             case "3":
                 currentlens = lens.Lsocial;
+                ActivateLen();
+                break;
+
+            case "4":
+                currentlens = lens.Lmental;
                 ActivateLen();
                 break;
 
