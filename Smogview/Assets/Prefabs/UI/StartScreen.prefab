@@ -393,7 +393,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -180}
-  m_SizeDelta: {x: 650, y: 40}
+  m_SizeDelta: {x: 900, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6870511514771189710
 CanvasRenderer:
@@ -436,7 +436,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "WASD to move   \xB7   E to interact"
+  m_Text: "WASD to move   \xB7   E to interact   \xB7   1\u20134 to switch lenses"
 --- !u!1 &8588682696111226062
 GameObject:
   m_ObjectHideFlags: 0
