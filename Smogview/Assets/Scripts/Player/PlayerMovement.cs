@@ -1,7 +1,8 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Windows;
+using System.Collections.Generic;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class PlayerMovement : MonoBehaviour
     private CircleCollider2D _interactionCollider;
 
     [SerializeField] private float _moveSpeed = 5f;
+    private List<float> _speedModifiers = new List<float>();
+    public float MoveSpeed { get; set; }
+    public bool CanMove { get; set; } = true;
     private Vector2 _input;
     private bool _moving = false;
 
@@ -56,9 +60,13 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         //Moving
-        if(_moving)
+        if(_moving && CanMove)
         {
-            _rb.MovePosition(_rb.position + _input * _moveSpeed * Time.fixedDeltaTime);
+            float _tempMoveSpeed = _moveSpeed;
+            foreach (float speed in _speedModifiers)
+                _tempMoveSpeed *= speed;
+
+            _rb.MovePosition(_rb.position + _input * _tempMoveSpeed * Time.fixedDeltaTime);
         }
         else
         {
@@ -94,5 +102,15 @@ public class PlayerMovement : MonoBehaviour
         _moving = true;
     }
 
+
+    public void AddSpeedMultiplier(float modifier)
+    {
+        _speedModifiers.Add(modifier);
+    }
+
+    public void RemoveSpeedMultiplier(float modifier)
+    {
+        _speedModifiers.Remove(modifier);
+    }
 }
 
