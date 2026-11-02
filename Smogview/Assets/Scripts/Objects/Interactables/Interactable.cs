@@ -9,8 +9,8 @@ public abstract class Interactable : MonoBehaviour
 {
     private List<Interaction> _activeInteractions = new List<Interaction>();
 
-
     [SerializeField] private Collider2D _interactionArea;
+    public bool BeingHeld { get; set; }
 
     public virtual void Awake()
     {
@@ -21,7 +21,8 @@ public abstract class Interactable : MonoBehaviour
     }
 
     public abstract void OnInteract();
-
+    //public virtual void Release() { }
+    
     /// <summary>
     /// Runs the interaction behavior for each attached interactable
     /// </summary>

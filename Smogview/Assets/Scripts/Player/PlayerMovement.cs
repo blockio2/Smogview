@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _moveSpeed = 5f;
     private List<float> _speedModifiers = new List<float>();
     public float MoveSpeed { get; set; }
+    public bool CanMove { get; set; } = true;
     private Vector2 _input;
     private bool _moving = false;
 
@@ -59,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         //Moving
-        if(_moving)
+        if(_moving && CanMove)
         {
             float _tempMoveSpeed = _moveSpeed;
             foreach (float speed in _speedModifiers)

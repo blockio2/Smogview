@@ -107,6 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPC
   _interactionArea: {fileID: 3968957179501539628}
+  _interactOnActivate: 1
   mainText: {fileID: 11400000, guid: 234b50fd916f08647abe272d3d29e441, type: 2}
   finishedText: {fileID: 0}
 --- !u!1 &8890290366353898845
