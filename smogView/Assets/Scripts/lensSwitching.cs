@@ -19,10 +19,10 @@ public class LensSwitching : MonoBehaviour
     public event System.Action<lens> LensChanged;
 
     public enum lens {
-    Ldefault,
-    Lphysical,
-    Lsocial,
-    Lmental
+        Ldefault,
+        Lphysical,
+        Lsocial,
+        Lmental
     }
 
 
@@ -43,24 +43,33 @@ public class LensSwitching : MonoBehaviour
         allLensObjects.AddRange(socialObjects);
         allLensObjects.AddRange(mentalObjects);
 
-        ActivateLen();
+        ActivateLens();
     }
 
 
     /// <summary>
     /// currently Deactive or Active the gameobjects depending on if they match the current lens 
     /// </summary>
-    private void ActivateLen()
+    private void ActivateLens()
     {
         foreach(GameObject g in allLensObjects)
         {
             if (g == null) continue;
+
+            HideWithSmog smogEffect = g.GetComponent<HideWithSmog>();
+
             if(g.CompareTag(currentlens.ToString()))
             {
                 g.SetActive(true);
+
+                if (smogEffect)
+                    smogEffect.RemoveSmog();
             }
             else
             {
+                if (smogEffect)
+                    smogEffect.CreateSmog();
+
                 g.SetActive(false);
             }
             
@@ -80,7 +89,7 @@ public class LensSwitching : MonoBehaviour
     {
         //Name of key pressed
         currentlens = Newlens;
-        ActivateLen();
+        ActivateLens();
     }
 
 
@@ -97,22 +106,22 @@ public class LensSwitching : MonoBehaviour
         {
             case "1":
                 currentlens = lens.Ldefault;
-                ActivateLen();
+                ActivateLens();
                 break;
 
             case "2":
                 currentlens = lens.Lphysical;
-                ActivateLen();
+                ActivateLens();
                 break;
 
             case "3":
                 currentlens = lens.Lsocial;
-                ActivateLen();
+                ActivateLens();
                 break;
 
             case "4":
                 currentlens = lens.Lmental;
-                ActivateLen();
+                ActivateLens();
                 break;
 
             default:

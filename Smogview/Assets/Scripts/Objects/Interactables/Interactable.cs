@@ -21,7 +21,7 @@ public abstract class Interactable : MonoBehaviour
     }
 
     public abstract void OnInteract();
-    //public virtual void Release() { }
+    public virtual void Release() { }
     
     /// <summary>
     /// Runs the interaction behavior for each attached interactable

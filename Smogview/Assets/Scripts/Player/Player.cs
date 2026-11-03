@@ -90,6 +90,7 @@ public class Player : MonoBehaviour
             else if (context.canceled)
             {
                 _currentTarget.BeingHeld = false;
+                _currentTarget.Release();
             }
 
             if (context.performed)
