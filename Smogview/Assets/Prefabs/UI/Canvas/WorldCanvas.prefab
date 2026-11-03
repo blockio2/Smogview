@@ -417,7 +417,7 @@ GameObject:
   - component: {fileID: 1585793458045649753}
   m_Layer: 5
   m_Name: NPCTextArea
-  m_TagString: Lsocial
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -434,8 +434,8 @@ RectTransform:
   m_LocalScale: {x: 0.76, y: 0.76, z: 0.76}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 69326937869156087}
   - {fileID: 6463231288829732885}
+  - {fileID: 69326937869156087}
   m_Father: {fileID: 758419649020149538}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}

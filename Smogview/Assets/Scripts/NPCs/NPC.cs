@@ -1,101 +1,27 @@
-using System.Collections;
+using Unity.Collections.Tests.CoreCLR.TestJobs;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
-public class NPC : Interactable
+public class NPC : MonoBehaviour
 {
-    [SerializeField] DialogueAsset mainText;
-    [SerializeField] DialogueAsset finishedText;
-    private GameObject _npcTextArea;
-    private Image _moreTextIndicator;
-    private TMP_Text _npcText;
+    [SerializeField] private GameObject _interactableNPC;
+    [SerializeField] private GameObject _defaultNPC;
+    private LensManager _lensSwitching;
 
-    private int _dialogueCounter = 0;
-    private bool _allDialogueSeen = false;
-    private float _dialogueDisplayTime = 3f;
-
-    public override void Awake()
+    private void Awake()
     {
-        base.Awake();
-
-        _npcTextArea = GameObject.Find("NPCTextArea");
-        _moreTextIndicator = _npcTextArea.transform.Find("Indicator").GetComponent<Image>();
-        _npcText = _npcTextArea.transform.Find("Text").GetComponent<TMP_Text>();
+        _lensSwitching = FindAnyObjectByType<LensManager>();
     }
 
-    //Hide dialogue when switching lenses
-    public void OnEnable()
+    public void Update()
     {
-        EndDialogue();
-    }
-    public void OnDisable()
-    {
-        EndDialogue();
-    }
-
-    /// <summary>
-    /// Activate the text panel and move it below the NPC
-    /// </summary>
-    public override void OnInteract()
-    {
-        _npcTextArea.SetActive(true);
-        _npcTextArea.transform.position = new Vector2(transform.position.x, transform.position.y - 1.2f);
-
-        ShowDialogue();
-    }
-
-    /// <summary>
-    /// Load the DialogueAsset text into the text area based on how much has been scene
-    /// Starts a coroutine to clear the dialogue
-    /// </summary>
-    public void ShowDialogue()
-    {
-        StopAllCoroutines();
-
-        //Check if all dialogue has been seen. Reset counter to play it again
-        if(_dialogueCounter >= mainText.DialogueCount)
+        if(_lensSwitching.CurrentLens == LensManager.lens.Lsocial)
         {
-            _allDialogueSeen = true;
-            _dialogueCounter = 0;
-            EndDialogue();
-            return; //Quit early when using EndDialogue() to prevent dialogue counter from incrementing
+            _defaultNPC.SetActive(false);
         }
-        //Disable more dialogue indactor when the last text has been loaded
-        if(_allDialogueSeen || _dialogueCounter == mainText.DialogueCount - 1)
-        {
-            _moreTextIndicator.enabled = false;
-        }
-        
-        //If all dialogue has been seen and there is repeated dialogue at the end, play that
-        if(_allDialogueSeen && finishedText)
-        {
-            _npcText.text = finishedText.dialogue[0];
-        }
-        //Otherwise display text in order
         else
         {
-            _npcText.text = mainText.dialogue[_dialogueCounter];
+            _defaultNPC.SetActive(true);
         }
-
-        _dialogueCounter++;
-
-
-        StartCoroutine("DialogueClearTimer");
     }
 
-    /// <summary>
-    /// Hide dialogue area
-    /// </summary>
-    public void EndDialogue()
-    {
-        if(_npcTextArea)
-            _npcTextArea.SetActive(false);
-    }
-
-    IEnumerator DialogueClearTimer()
-    {
-        yield return new WaitForSeconds(_dialogueDisplayTime);
-        EndDialogue();
-    }
 }
