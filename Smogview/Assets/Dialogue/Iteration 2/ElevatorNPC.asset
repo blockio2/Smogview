@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: ElevatorNPC
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAsset
   dialogue:
-  - I can't get to work since the elevator shut down
-  - You forgot where it is? Where have you been?
-  - Go down the hallway to the right
+  - I can't get to work since the elevator shut down.
+  - I mean I could turn the power back on but I already called out...
+  - You forgot where the elevator it is? Where have you been?
+  - If you really want to get out of here -
+  - Right down the hallway and up.
