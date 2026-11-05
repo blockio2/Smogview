@@ -11,8 +11,20 @@ public class LensManager : MonoBehaviour
     private GameObject[] socialObjects;
     private GameObject[] mentalObjects;
 
+
+    private Camera _mainCamera;
+    private float _cameraZoom;
+    private float _targetZoom;
+    [SerializeField] private float _defaultCameraZoom = 5.5f;
+    [SerializeField] private float _lensCameraZoom = 3.5f;
+    [SerializeField] private float _zoomTransitionTime = 0.2f;
+    private float _zoomTransitionTimer;
+    private bool _zooming;
+
+
     [SerializeField] private List<GameObject> allLensObjects = new List<GameObject>();
 
+    
 
     lens currentlens;
     public lens CurrentLens => currentlens;
@@ -25,7 +37,12 @@ public class LensManager : MonoBehaviour
         Lmental
     }
 
-
+    void Awake()
+    {
+        _mainCamera = FindAnyObjectByType<Camera>();
+        _cameraZoom = _defaultCameraZoom;
+        _mainCamera.orthographicSize = _defaultCameraZoom;
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -77,7 +94,25 @@ public class LensManager : MonoBehaviour
         LensChanged?.Invoke(currentlens);
     }
 
+    void Update()
+    {
+        //If zooming, using linear interpolation to change the camera zoom towards it's target zoom
+        if (_zooming)
+        {
+            _zoomTransitionTimer += Time.deltaTime;
 
+            _mainCamera.orthographicSize = Mathf.Lerp(_cameraZoom, _targetZoom, _zoomTransitionTimer / _zoomTransitionTime);
+
+            //Zoom is complete, reset timer and stop zooming.
+            if (_zoomTransitionTimer > _zoomTransitionTime)
+            {
+                _zooming = false;
+                _zoomTransitionTimer = 0;
+            }
+                
+        }
+
+    }
 
 
 
@@ -129,11 +164,23 @@ public class LensManager : MonoBehaviour
                 Debug.Log("broken");
                 break;
         }
+
+        //Lens changed - camera should zoom to match the lens zoom level
+        _zoomTransitionTimer = 0;
+        _zooming = true;
+        _cameraZoom = _mainCamera.orthographicSize;
+
+        if (currentlens == lens.Ldefault)
+        {
+            _targetZoom = _defaultCameraZoom;
+        }
+        else
+        {
+            _targetZoom = _lensCameraZoom;
+        }
+
+
     }
-
-
-
-
 
 }
 

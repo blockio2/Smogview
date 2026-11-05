@@ -780,6 +780,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 180762119601692057, guid: b62d5a58dd7c0b34da1d672d33b39ce7, type: 3}
   m_PrefabInstance: {fileID: 368897841}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &458898218 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2782879772281036006, guid: 05e4282fc7e6eae43bdad10ccd509cad, type: 3}
+  m_PrefabInstance: {fileID: 1156035762}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &458898226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458898218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44467e0cd1c839d43865845f429e0be7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LensManager
+  _defaultCameraZoom: 5.4
+  _lensCameraZoom: 2.9
+  _zoomTransitionTime: 0.2
+  allLensObjects: []
 --- !u!1001 &518698113
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3933,6 +3954,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2025129293215477618, guid: 05e4282fc7e6eae43bdad10ccd509cad, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 458898226}
+    - target: {fileID: 2025129293215477618, guid: 05e4282fc7e6eae43bdad10ccd509cad, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetLens
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025129293215477618, guid: 05e4282fc7e6eae43bdad10ccd509cad, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LensManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2782879772281036006, guid: 05e4282fc7e6eae43bdad10ccd509cad, type: 3}
       propertyPath: m_Name
       value: Player
@@ -3977,10 +4010,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6312035005513428557, guid: 05e4282fc7e6eae43bdad10ccd509cad, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2782879772281036006, guid: 05e4282fc7e6eae43bdad10ccd509cad, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 458898226}
   m_SourcePrefab: {fileID: 100100000, guid: 05e4282fc7e6eae43bdad10ccd509cad, type: 3}
 --- !u!1 &1204914717
 GameObject:

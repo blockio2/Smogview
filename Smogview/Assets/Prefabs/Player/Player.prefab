@@ -310,6 +310,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44467e0cd1c839d43865845f429e0be7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LensSwitching
+  _defaultCameraZoom: 6
+  _lensCameraZoom: 3
   allLensObjects: []
 --- !u!1 &4612197896240354753
 GameObject:
