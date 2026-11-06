@@ -11,6 +11,12 @@ public class RemoveObject : Interaction
     [SerializeField] private GameObject _removedObject;
     private bool _removed = false;
 
+    private void Awake()
+    {
+        if (!_removedObject)
+            _removedObject = gameObject;
+    }
+
     public override void Behaviour()
     {
         if (!_removed)
