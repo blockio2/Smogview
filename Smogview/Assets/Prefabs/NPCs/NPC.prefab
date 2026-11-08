@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1232773484682188139}
   - component: {fileID: 1020794814656375416}
   - component: {fileID: 8104167226488365455}
+  - component: {fileID: 7066335174675683171}
   m_Layer: 0
   m_Name: InteractableNPC
   m_TagString: Lsocial
@@ -109,9 +110,43 @@ MonoBehaviour:
   _interactionArea: {fileID: 637969561305474172}
   mainText: {fileID: 11400000, guid: 234b50fd916f08647abe272d3d29e441, type: 2}
   finishedText: {fileID: 0}
-  _npcTextArea: {fileID: 0}
-  _moreTextIndicator: {fileID: 0}
-  _npcText: {fileID: 0}
+--- !u!70 &7066335174675683171
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3732007046088981383}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.7, y: 1.625}
+  m_Direction: 0
 --- !u!1 &4638204037625402082
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,6 +158,7 @@ GameObject:
   - component: {fileID: 2799222181749123357}
   - component: {fileID: 9172949526864918327}
   - component: {fileID: 7767502949255118498}
+  - component: {fileID: 9168528907615742888}
   m_Layer: 0
   m_Name: DefaultNPC
   m_TagString: Untagged
@@ -221,9 +257,43 @@ MonoBehaviour:
   _interactionArea: {fileID: 2019681964440974615}
   mainText: {fileID: 11400000, guid: fb1e5a5c33c2673419c43e9299195d74, type: 2}
   finishedText: {fileID: 0}
-  _npcTextArea: {fileID: 0}
-  _moreTextIndicator: {fileID: 0}
-  _npcText: {fileID: 0}
+--- !u!70 &9168528907615742888
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4638204037625402082}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.7, y: 1.625}
+  m_Direction: 0
 --- !u!1 &5041916462693595682
 GameObject:
   m_ObjectHideFlags: 0

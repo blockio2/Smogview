@@ -183,6 +183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ChargeInteraction
   _interactionArea: {fileID: 0}
   _clicksToActivate: 10
+  _currentClicks: 0
 --- !u!1 &6194926406261948219
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,7 +196,7 @@ GameObject:
   - component: {fileID: 3265718123764445282}
   m_Layer: 0
   m_Name: InteractionHitbox
-  m_TagString: Untagged
+  m_TagString: Lphysical
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
