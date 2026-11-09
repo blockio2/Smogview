@@ -6,6 +6,9 @@ using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] GameObject pauseScreen;
+
+
     private Rigidbody2D _rb;
 
     private CircleCollider2D _interactionCollider;
@@ -112,5 +115,19 @@ public class PlayerMovement : MonoBehaviour
     {
         _speedModifiers.Remove(modifier);
     }
+
+
+
+    //Called to enable and disable the pause menu(currently bound to escape)
+    public void Pause()
+    {
+        pauseScreen.SetActive(!pauseScreen.activeSelf);
+
+        if(!pauseScreen.activeSelf)gameObject.GetComponent<PlayerMovement>().enabled = true; 
+            else gameObject.GetComponent<PlayerMovement>().enabled = false;
+
+    }
+
+
 }
 
