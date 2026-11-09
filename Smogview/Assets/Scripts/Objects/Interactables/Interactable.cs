@@ -11,6 +11,9 @@ public abstract class Interactable : MonoBehaviour
 
     [SerializeField] private Collider2D _interactionArea;
     public bool BeingHeld { get; set; }
+    // Wire-system integration: Player uses this same eligibility for the E prompt and action.
+    // The default preserves enabled-object behavior; WireStation overrides it while its panel is open.
+    public virtual bool CanInteract => isActiveAndEnabled;
 
     public virtual void Awake()
     {

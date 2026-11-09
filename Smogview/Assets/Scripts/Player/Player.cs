@@ -22,6 +22,9 @@ public class Player : MonoBehaviour
     }
     private PlayerMovement _playerMovement;
     // The prompt and the E action use the same eligibility check.
+    // Wire-system integration: the overlay sets this on open and clears it on close.
+    // Blocking target lookup also hides the existing E prompt, while lens keys remain available.
+    public bool InteractionBlocked { get; set; }
     public bool CanInteract => FindInteractionTarget() != null;
 
     public void Awake()
@@ -42,7 +45,7 @@ public class Player : MonoBehaviour
 
     private Interactable FindInteractionTarget()
     {
-        if (!isActiveAndEnabled || _interactionCollider == null || !_interactionCollider.isActiveAndEnabled)
+        if (InteractionBlocked || !isActiveAndEnabled || _interactionCollider == null || !_interactionCollider.isActiveAndEnabled)
         {
             return null;
         }
@@ -54,7 +57,8 @@ public class Player : MonoBehaviour
         {
             if (hit == null || hit.name != "InteractionHitbox" || hit.transform.IsChildOf(transform)) continue;
             Interactable target = hit.GetComponentInParent<Interactable>();
-            if (target == null || !target.isActiveAndEnabled) continue;
+            // Respect each interactable's availability before selecting the nearest E target.
+            if (target == null || !target.isActiveAndEnabled || !target.CanInteract) continue;
             float distance = ((Vector2)hit.bounds.center - (Vector2)_interactionCollider.bounds.center).sqrMagnitude;
             if (distance < nearestDistance)
             {

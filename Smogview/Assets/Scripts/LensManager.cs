@@ -28,6 +28,9 @@ public class LensManager : MonoBehaviour
 
     lens currentlens;
     public lens CurrentLens => currentlens;
+    // Puzzle controllers can gate a lens without replacing the team's smog or camera behavior.
+    // A null predicate preserves normal lens availability in all other scenes.
+    public System.Func<lens, bool> CanSelectLens { get; set; }
     public event System.Action<lens> LensChanged;
 
     public enum lens {
@@ -122,48 +125,10 @@ public class LensManager : MonoBehaviour
     /// <param name="Newlens">lens enum in lensSwitching</param>
     public void SetLens(lens Newlens)
     {
-        //Name of key pressed
+        // Deny locked lenses before changing world objects, the HUD, or the camera zoom.
+        if (CanSelectLens != null && !CanSelectLens(Newlens)) return;
         currentlens = Newlens;
         ActivateLens();
-    }
-
-
-    /// <summary>
-    /// called when the player presses 1,2,3,4(currently) 
-    /// check which key is pressed and switches the Enum to the proper state
-    /// </summary>
-    /// <param name="context">the info unity provides when a key is pressed</param>
-    public void SetLens(InputAction.CallbackContext context)
-    {
-        if (!context.performed) return;
-        //Name of key pressed
-        switch (context.control.name)
-        {
-            case "1":
-                currentlens = lens.Ldefault;
-                ActivateLens();
-                break;
-
-            case "2":
-                currentlens = lens.Lphysical;
-                ActivateLens();
-                break;
-
-            case "3":
-                currentlens = lens.Lsocial;
-                ActivateLens();
-                break;
-
-            case "4":
-                currentlens = lens.Lmental;
-                ActivateLens();
-                break;
-
-            default:
-                currentlens = lens.Ldefault;
-                Debug.Log("broken");
-                break;
-        }
 
         //Lens changed - camera should zoom to match the lens zoom level
         _zoomTransitionTimer = 0;
@@ -178,6 +143,44 @@ public class LensManager : MonoBehaviour
         {
             _targetZoom = _lensCameraZoom;
         }
+    }
+
+
+    /// <summary>
+    /// called when the player presses 1,2,3,4(currently) 
+    /// check which key is pressed and switches the Enum to the proper state
+    /// </summary>
+    /// <param name="context">the info unity provides when a key is pressed</param>
+    public void SetLens(InputAction.CallbackContext context)
+    {
+        if (!context.performed) return;
+        //Name of key pressed
+        // Keyboard and scripted changes use the same unlock check and camera transition.
+        switch (context.control.name)
+        {
+            case "1":
+                SetLens(lens.Ldefault);
+                break;
+
+            case "2":
+                SetLens(lens.Lphysical);
+                break;
+
+            case "3":
+                SetLens(lens.Lsocial);
+                break;
+
+            case "4":
+                SetLens(lens.Lmental);
+                break;
+
+            default:
+                currentlens = lens.Ldefault;
+                Debug.Log("broken");
+                break;
+        }
+
+
 
 
     }
