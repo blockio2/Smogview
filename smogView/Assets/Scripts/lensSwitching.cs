@@ -16,6 +16,9 @@ public class LensSwitching : MonoBehaviour
 
     lens currentlens;
     public lens CurrentLens => currentlens;
+    // Wire-system integration: PuzzleOnePowerController temporarily gates Mental until the tangle unlock.
+    // A null gate preserves the original lens availability in scenes without that controller.
+    public System.Func<lens, bool> CanSelectLens { get; set; }
     public event System.Action<lens> LensChanged;
 
     public enum lens {
@@ -79,6 +82,8 @@ public class LensSwitching : MonoBehaviour
     public void SetLens(lens Newlens)
     {
         //Name of key pressed
+        // Reject a locked lens before changing currentlens or firing LensChanged, so the HUD stays correct.
+        if (CanSelectLens != null && !CanSelectLens(Newlens)) return;
         currentlens = Newlens;
         ActivateLen();
     }
@@ -93,26 +98,23 @@ public class LensSwitching : MonoBehaviour
     {
         if (!context.performed) return;
         //Name of key pressed
+        // Route number keys through the same guarded setter used by other scripts.
         switch (context.control.name)
         {
             case "1":
-                currentlens = lens.Ldefault;
-                ActivateLen();
+                SetLens(lens.Ldefault);
                 break;
 
             case "2":
-                currentlens = lens.Lphysical;
-                ActivateLen();
+                SetLens(lens.Lphysical);
                 break;
 
             case "3":
-                currentlens = lens.Lsocial;
-                ActivateLen();
+                SetLens(lens.Lsocial);
                 break;
 
             case "4":
-                currentlens = lens.Lmental;
-                ActivateLen();
+                SetLens(lens.Lmental);
                 break;
 
             default:

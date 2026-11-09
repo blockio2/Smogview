@@ -14,6 +14,9 @@ public class PlayerMovement : MonoBehaviour
     private List<float> _speedModifiers = new List<float>();
     public float MoveSpeed { get; set; }
     public bool CanMove { get; set; } = true;
+    // Wire-system integration: pause walking only while choosing a wire/socket in the overlay.
+    // Keep CanMove for the existing held-object mechanic; carrying a wire itself must allow walking.
+    public bool ControlsBlocked { get; set; }
     private Vector2 _input;
     private bool _moving = false;
 
@@ -59,8 +62,8 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     void FixedUpdate()
     {
-        //Moving
-        if(_moving && CanMove)
+        // Both the existing movement permission and the temporary overlay lock must allow walking.
+        if(_moving && CanMove && !ControlsBlocked)
         {
             float _tempMoveSpeed = _moveSpeed;
             foreach (float speed in _speedModifiers)
