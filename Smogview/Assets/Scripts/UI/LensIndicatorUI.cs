@@ -6,7 +6,7 @@ namespace Smogview.UI
     // A passive HUD: keyboard input remains owned by the player's lens controller.
     public sealed class LensIndicatorUI : MonoBehaviour
     {
-        [SerializeField] private LensSwitching source;
+        [SerializeField] private LensManager source;
         // Keep all arrays in the lens enum order: Default, Physical, Social, Mental.
         [SerializeField] private Image[] icons;
         // Each group includes the whole icon, including Default's ring and eye layers.
@@ -20,12 +20,12 @@ namespace Smogview.UI
             new Color32(137, 203, 172, 255),
             new Color32(91, 199, 142, 255)
         };
-        private LensSwitching boundSource;
+        private LensManager boundSource;
         public int SelectedIndex { get; private set; }
 
         private void OnEnable()
         {
-            if (source == null) source = FindAnyObjectByType<LensSwitching>();
+            if (source == null) source = FindAnyObjectByType<LensManager>();
             boundSource = source;
             if (boundSource != null)
             {
@@ -44,7 +44,7 @@ namespace Smogview.UI
         }
 
         // Only changes the display; lens switching and world visibility stay in LensSwitching.
-        private void Refresh(LensSwitching.lens activeLens)
+        private void Refresh(LensManager.lens activeLens)
         {
             SelectedIndex = (int)activeLens;
             for (int i = 0; i < labels.Length; i++)

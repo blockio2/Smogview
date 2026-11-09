@@ -11,7 +11,7 @@ namespace Smogview.Wires
         public Player player;
         public PlayerMovement movement;
         public PuzzleOnePowerController controller;
-        public LensSwitching lenses;
+        public LensManager lenses;
         public bool IsOpen => station != null;
         private WireStation station;
         private GameObject panel;
@@ -112,7 +112,7 @@ namespace Smogview.Wires
         {
             if(Time.unscaledTime>messageUntil) message.text="";
             var wire=carrier.CarriedWire;
-            string identity = wire != null && controller.MentalUnlocked && lenses.CurrentLens==LensSwitching.lens.Lmental ? wire.color+" wire" : "wire";
+            string identity = wire != null && controller.MentalUnlocked && lenses.CurrentLens==LensManager.lens.Lmental ? wire.color+" wire" : "wire";
             status.text=wire == null ? "" : "Carrying "+identity+"   |   R: return in Physical lens";
             if(!IsOpen) return;
             if((Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame) ||
@@ -124,8 +124,8 @@ namespace Smogview.Wires
         {
             // The menu follows the same lens rules as the world: Physical edits, Default socket colors, Mental wire colors.
             bool physical=carrier.CanHandle;
-            bool mental=controller.MentalUnlocked && lenses.CurrentLens==LensSwitching.lens.Lmental;
-            bool normal=lenses.CurrentLens==LensSwitching.lens.Ldefault;
+            bool mental=controller.MentalUnlocked && lenses.CurrentLens==LensManager.lens.Lmental;
+            bool normal=lenses.CurrentLens==LensManager.lens.Ldefault;
             title.text=computer ? "POWER CONTROL" : station.box.displayName;
             for(int i=0;i<4;i++)
             {

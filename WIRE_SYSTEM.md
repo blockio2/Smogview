@@ -10,7 +10,7 @@ Open **`Smogview/Assets/Scenes/puzzle 1.unity`** and press Play. The wire system
 | `(TEMP)power extender (1)` | Relay below the breaker; three prewired inputs with broken lights |
 | `(TEMP)power extender` | Third box at the south end of the left corridor; tangle immediately below it |
 | `(TEMP)power extender (4)` | Closet box in the small room on the left |
-| `(TEMP)computer (1)` | Computer in the larger central room |
+| `bedroom-pc-set-full` | Team's updated computer artwork in the central room |
 | `(TEMP)power extender (3)` | Optional extension box along the main hallway |
 | `(TEMP)power extender (2)` | Grate box in the elevator hallway |
 | `(TEMP)power reciever` | Final red/blue elevator sockets; original scene spelling retained |
@@ -49,13 +49,13 @@ Yes: the wire implementation modifies four pre-existing scripts. These are small
 | `Assets/Scripts/Objects/Interactables/Interactable.cs` | Added virtual `CanInteract`, defaulting to `isActiveAndEnabled`. | Lets a wire station report that it is unavailable while a panel is open. Other interactables retain the default enabled-object behavior. |
 | `Assets/Scripts/Player/Player.cs` | Added `InteractionBlocked`; `FindInteractionTarget()` returns no target while blocked and skips targets whose `CanInteract` is false. | The existing E action and E prompt both respect the wire overlay, avoiding world interactions behind a menu. |
 | `Assets/Scripts/Player/PlayerMovement.cs` | Added `ControlsBlocked`; `FixedUpdate()` movement now requires `_moving && CanMove && !ControlsBlocked`. | Pauses walking during wire/socket selection while preserving the existing held-object `CanMove` behavior. Walking resumes after closing the panel. |
-| `Assets/Scripts/lensSwitching.cs` | Added optional `CanSelectLens`; `SetLens(lens)` checks it before changing the lens; keys 1-4 call that same setter. | Locks Mental until the third-box tangle unlock and keeps the HUD consistent when selection is denied. Scenes without a gate keep the original lens availability. |
+| `Assets/Scripts/LensManager.cs` | Added optional `CanSelectLens`; `SetLens(lens)` checks it before changing the lens; keys 1-4 call that same setter. | Locks Mental until the third-box tangle unlock and keeps the HUD consistent when selection is denied. Scenes without a gate keep the original lens availability. |
 
 The shared Player prefab and input-action asset are unchanged by this task. The existing player scene instance receives `PlayerWireCarrier`; its existing lens callback is reused, or bound on that instance if missing. The controller restores the previous lens gate when disabled.
 
 ## Comments and current presentation limits
 
-Explanatory comments have been added or expanded in all four modified team scripts and all eleven new runtime scripts. They cover why the integration flags exist, routing, replacement connections, carry distance, lens clues, Mental progression, the computer's two-output rule, and the separation between grate access and electrical power. This documentation pass changes comments only; executable lines match the previously tested implementation.
+Explanatory comments have been added or expanded in all four modified team scripts and all eleven new runtime scripts. They cover why the integration flags exist, routing, replacement connections, carry distance, lens clues, Mental progression, the computer's two-output rule, and the separation between grate access and electrical power. The comments document the integration; the merged implementation was checked in Play mode with the current team scene and LensManager.
 
 The prototype's status text has three distinct meanings:
 
@@ -76,8 +76,10 @@ The runtime scripts include explanatory comments, and the scene contains all con
 
 ## Local review result and teammate changelog
 
-The saved-scene Play-mode regression passed for movement, E and lens input, panels, matching/mismatched wires, replacements, tangle unlock/reset, carry limits, computer controls, grate access, elevator completion, power loss/restoration and the optional extension. Geometry checks found approaches to all ten wire interaction points and verified seven carrying routes through the existing map. A preservation check retained all 113 original serialized scene objects, with no changes to existing map, sprite-renderer, camera or behaviour components; added components/children and scene-instance overrides provide the integration. Comment-only edits were checked against both their immediate backups and the tested source.
+The saved-scene Play-mode regression passed for movement, E and lens input, panels, matching/mismatched wires, replacements, tangle unlock/reset, carry limits, computer controls, grate access, elevator completion, power loss/restoration and the optional extension. Geometry checks found approaches to all ten wire interaction points and verified seven carrying routes through the existing map. A preservation check retained all 107 serialized objects from the current main scene, with no changes to existing map, sprite-renderer, camera or behaviour components; added components/children and scene-instance overrides provide the integration. Comment-only edits were checked against both their immediate backups and the tested source.
 
-Other local differences already present in Game, StartScreen and ProjectSettings are separate from this wire-system task. They should not be described as wire changes. Nothing has been committed or pushed by this work.
+Unrelated local scene edits are separate from this wire-system task. The merge retains main's scene organization, StartScreen destination, NPC updates and project settings.
 
 Short changelog: Implemented Puzzle One's wire system in the existing scene: lens-based wiring, Mental unlock, computer power switching, grate/elevator logic and an optional extension box. Reused the existing player/UI, added explanatory comments and playtest checks, and made small interaction, movement and lens-gating updates to four existing scripts. Changes are local only.
+
+The merge with main retains the team's LensManager, smog effects, camera zoom, NPC/interaction changes, current player prefab and updated level objects. Wire components use LensManager; its optional gate blocks locked Mental selection before changing the HUD or zoom. The computer interaction is attached to the new bedroom-pc-set-full object.

@@ -6,7 +6,7 @@ namespace Smogview.Wires
     public sealed class WireVisual : MonoBehaviour
     {
         public Wire wire;
-        public LensSwitching lenses;
+        public LensManager lenses;
         public PuzzleOnePowerController controller;
         private LineRenderer line;
         private void Awake() { line = GetComponent<LineRenderer>(); }
@@ -21,7 +21,7 @@ namespace Smogview.Wires
             line.SetPosition(1, (start + end) * .5f + Vector3.down * .22f);
             line.SetPosition(2, end);
             // Mental reveals channel identity even on an unpowered lead; color is not a power indicator.
-            bool reveal = controller.MentalUnlocked && lenses.CurrentLens == LensSwitching.lens.Lmental;
+            bool reveal = controller.MentalUnlocked && lenses.CurrentLens == LensManager.lens.Lmental;
             Color tint = reveal ? Wire.Tint(wire.color) : new Color(.66f, .71f, .73f);
             line.startColor = line.endColor = tint;
         }

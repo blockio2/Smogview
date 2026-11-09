@@ -6,11 +6,11 @@ namespace Smogview.Wires
     /// <summary>Wire carrying deliberately does not use Interactable.BeingHeld, which stops walking.</summary>
     public sealed class PlayerWireCarrier : MonoBehaviour
     {
-        public LensSwitching lenses;
+        public LensManager lenses;
         public WireInteractionUI ui;
         public Wire CarriedWire { get; private set; }
         // Switching lenses does not drop a held lead; only picking up/inserting requires Physical.
-        public bool CanHandle => lenses != null && lenses.CurrentLens == LensSwitching.lens.Lphysical;
+        public bool CanHandle => lenses != null && lenses.CurrentLens == LensManager.lens.Lphysical;
 
         public bool PickUp(Wire wire)
         {

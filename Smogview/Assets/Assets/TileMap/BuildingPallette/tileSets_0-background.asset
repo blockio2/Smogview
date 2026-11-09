@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: tileSets_0 1
+  m_Name: tileSets_0-background
   m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.Tilemaps.Tile
   m_Sprite: {fileID: 1742312335334057651, guid: 279941a124eb24f41b3982b74a69af79, type: 3}
   m_Color: {r: 0.4792453, g: 0.4792453, b: 0.4792453, a: 1}

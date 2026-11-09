@@ -3,7 +3,7 @@ using UnityEngine;
 using System.Collections;
 
 [System.Serializable]
-public class ChangeColor : Interaction
+public class FlashColor : Interaction
 {
     //Color field perhaps 
     //Field for duration as well

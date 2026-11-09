@@ -1,3 +1,4 @@
+using System;
 using System.Data;
 using UnityEngine;
 
@@ -5,10 +6,24 @@ using UnityEngine;
 /// Destroys the game object when called
 /// </summary>
 [System.Serializable]
-public class RemoveOnHold : Interaction
+public class RemoveObject : Interaction
 {
+    [SerializeField] private GameObject _removedObject;
+    private bool _removed = false;
+
+    private void Awake()
+    {
+        if (!_removedObject)
+            _removedObject = gameObject;
+    }
+
     public override void Behaviour()
     {
-        Destroy(this.gameObject);
+        if (!_removed)
+        {
+            Destroy(_removedObject);
+            _removed = true;
+        }
+            
     }
 }

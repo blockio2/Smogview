@@ -7,28 +7,27 @@ public class DelayedInteraction : Interactable
     [SerializeField] private float _timeToInteract;
     private float _interactTimer;
     private bool _canActivate = false;
-    private GameObject _interactionIndicatorObj;
-    private Image _interactionIndicator;
 
     private PlayerMovement _playerMovement;
+    InteractionIndicatorUI _interactionIndicator;
 
 
     public override void Awake()
     {
         base.Awake();
-        _interactionIndicatorObj = GameObject.Find("InteractionIndicator");
-        _interactionIndicator = _interactionIndicatorObj.GetComponent<Image>();
         _playerMovement = FindAnyObjectByType<PlayerMovement>();
+        _interactionIndicator = FindAnyObjectByType<InteractionIndicatorUI>();
     }
 
     public void Update()
     {
         if (BeingHeld)
         {
+            _interactionIndicator.Active = true;
 
             //Move indicator wheel above object position and change the fill amount based on completion percent
-            _interactionIndicatorObj.transform.position = new Vector2(transform.position.x, transform.position.y + 1.2f);
-            _interactionIndicator.fillAmount = _interactTimer / _timeToInteract;
+            _interactionIndicator.Move(new Vector2(transform.position.x, transform.position.y + 1.2f));
+            _interactionIndicator.SetFill(_interactTimer / _timeToInteract);
 
             _interactTimer += Time.deltaTime;
 
@@ -37,13 +36,7 @@ public class DelayedInteraction : Interactable
             {
                 _canActivate = true;
                 OnInteract();
-            }
-                
-        }
-        else
-        {
-            _interactTimer = 0;
-            _interactionIndicator.fillAmount = 0;
+            }       
         }
     }
 
@@ -53,8 +46,15 @@ public class DelayedInteraction : Interactable
         {
             _canActivate = false;
             _interactTimer = 0;
-            _interactionIndicator.fillAmount = 0;
+            _interactionIndicator.SetFill(0);
             ActivateInteractions();
         }
+    }
+
+    public override void Release()
+    {
+        _interactTimer = 0;
+        _interactionIndicator.SetFill(0);
+        _interactionIndicator.Active = false;
     }
 }

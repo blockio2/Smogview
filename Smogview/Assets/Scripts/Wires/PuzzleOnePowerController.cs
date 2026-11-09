@@ -8,7 +8,7 @@ namespace Smogview.Wires
     public sealed class PuzzleOnePowerController : MonoBehaviour
     {
         public WireNetwork network;
-        public LensSwitching lenses;
+        public LensManager lenses;
         public PowerBox breaker, thirdBox, closet, grateBox, elevatorBox;
         public WireSocket computerSocket;
         public WireInteractionUI ui;
@@ -26,7 +26,7 @@ namespace Smogview.Wires
         public WireColor DisabledColor { get; private set; } = WireColor.Yellow;
         public bool ComputerPowered => MentalUnlocked && computerSocket.Powered;
         public event Action Changed;
-        private Func<LensSwitching.lens, bool> previousLensGate;
+        private Func<LensManager.lens, bool> previousLensGate;
 
         private void OnEnable()
         {
@@ -41,9 +41,9 @@ namespace Smogview.Wires
             if (lenses.CanSelectLens == CanSelectLens) lenses.CanSelectLens = previousLensGate;
         }
         private void Start() { ApplyOutputs(); }
-        private bool CanSelectLens(LensSwitching.lens lens)
+        private bool CanSelectLens(LensManager.lens lens)
         {
-            if (lens == LensSwitching.lens.Lmental && !MentalUnlocked)
+            if (lens == LensManager.lens.Lmental && !MentalUnlocked)
             {
                 ui?.Notify("Inspect the wire tangle after powering the third box to unlock Mental.");
                 return false;

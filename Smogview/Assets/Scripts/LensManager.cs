@@ -4,31 +4,48 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class LensSwitching : MonoBehaviour
+public class LensManager : MonoBehaviour
 {
     private GameObject[] defaultObjects;
     private GameObject[] physicalObjects;
     private GameObject[] socialObjects;
     private GameObject[] mentalObjects;
 
+
+    private Camera _mainCamera;
+    private float _cameraZoom;
+    private float _targetZoom;
+    [SerializeField] private float _defaultCameraZoom = 5.5f;
+    [SerializeField] private float _lensCameraZoom = 3.5f;
+    [SerializeField] private float _zoomTransitionTime = 0.2f;
+    private float _zoomTransitionTimer;
+    private bool _zooming;
+
+
     [SerializeField] private List<GameObject> allLensObjects = new List<GameObject>();
 
+    
 
     lens currentlens;
     public lens CurrentLens => currentlens;
-    // Wire-system integration: PuzzleOnePowerController temporarily gates Mental until the tangle unlock.
-    // A null gate preserves the original lens availability in scenes without that controller.
+    // Puzzle controllers can gate a lens without replacing the team's smog or camera behavior.
+    // A null predicate preserves normal lens availability in all other scenes.
     public System.Func<lens, bool> CanSelectLens { get; set; }
     public event System.Action<lens> LensChanged;
 
     public enum lens {
-    Ldefault,
-    Lphysical,
-    Lsocial,
-    Lmental
+        Ldefault,
+        Lphysical,
+        Lsocial,
+        Lmental
     }
 
-
+    void Awake()
+    {
+        _mainCamera = FindAnyObjectByType<Camera>();
+        _cameraZoom = _defaultCameraZoom;
+        _mainCamera.orthographicSize = _defaultCameraZoom;
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -46,24 +63,33 @@ public class LensSwitching : MonoBehaviour
         allLensObjects.AddRange(socialObjects);
         allLensObjects.AddRange(mentalObjects);
 
-        ActivateLen();
+        ActivateLens();
     }
 
 
     /// <summary>
     /// currently Deactive or Active the gameobjects depending on if they match the current lens 
     /// </summary>
-    private void ActivateLen()
+    private void ActivateLens()
     {
         foreach(GameObject g in allLensObjects)
         {
             if (g == null) continue;
+
+            HideWithSmog smogEffect = g.GetComponent<HideWithSmog>();
+
             if(g.CompareTag(currentlens.ToString()))
             {
                 g.SetActive(true);
+
+                if (smogEffect)
+                    smogEffect.RemoveSmog();
             }
             else
             {
+                if (smogEffect)
+                    smogEffect.CreateSmog();
+
                 g.SetActive(false);
             }
             
@@ -71,7 +97,25 @@ public class LensSwitching : MonoBehaviour
         LensChanged?.Invoke(currentlens);
     }
 
+    void Update()
+    {
+        //If zooming, using linear interpolation to change the camera zoom towards it's target zoom
+        if (_zooming)
+        {
+            _zoomTransitionTimer += Time.deltaTime;
 
+            _mainCamera.orthographicSize = Mathf.Lerp(_cameraZoom, _targetZoom, _zoomTransitionTimer / _zoomTransitionTime);
+
+            //Zoom is complete, reset timer and stop zooming.
+            if (_zoomTransitionTimer > _zoomTransitionTime)
+            {
+                _zooming = false;
+                _zoomTransitionTimer = 0;
+            }
+                
+        }
+
+    }
 
 
 
@@ -81,11 +125,24 @@ public class LensSwitching : MonoBehaviour
     /// <param name="Newlens">lens enum in lensSwitching</param>
     public void SetLens(lens Newlens)
     {
-        //Name of key pressed
-        // Reject a locked lens before changing currentlens or firing LensChanged, so the HUD stays correct.
+        // Deny locked lenses before changing world objects, the HUD, or the camera zoom.
         if (CanSelectLens != null && !CanSelectLens(Newlens)) return;
         currentlens = Newlens;
-        ActivateLen();
+        ActivateLens();
+
+        //Lens changed - camera should zoom to match the lens zoom level
+        _zoomTransitionTimer = 0;
+        _zooming = true;
+        _cameraZoom = _mainCamera.orthographicSize;
+
+        if (currentlens == lens.Ldefault)
+        {
+            _targetZoom = _defaultCameraZoom;
+        }
+        else
+        {
+            _targetZoom = _lensCameraZoom;
+        }
     }
 
 
@@ -98,7 +155,7 @@ public class LensSwitching : MonoBehaviour
     {
         if (!context.performed) return;
         //Name of key pressed
-        // Route number keys through the same guarded setter used by other scripts.
+        // Keyboard and scripted changes use the same unlock check and camera transition.
         switch (context.control.name)
         {
             case "1":
@@ -122,11 +179,11 @@ public class LensSwitching : MonoBehaviour
                 Debug.Log("broken");
                 break;
         }
+
+
+
+
     }
-
-
-
-
 
 }
 
