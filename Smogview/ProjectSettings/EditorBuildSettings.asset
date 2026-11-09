@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/TestingScenes/Game.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 0
-    path: Assets/Scenes/Puzzle 1.unity
+    path: Assets/Scenes/puzzle 1.unity
     guid: 1f013cd67e9d50445b14bf1ef971e878
   - enabled: 1
     path: Assets/Scenes/Iteration 2 Puzzle.unity
