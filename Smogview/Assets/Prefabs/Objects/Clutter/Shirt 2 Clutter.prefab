@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4588752194362019178}
   - component: {fileID: -8549815155986819485}
   m_Layer: 0
-  m_Name: BaseClutter
+  m_Name: Shirt 2 Clutter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 9b40540275e26d64884d020555500f52, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ba62d4cc82017c64da0818f934864c75, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -131,17 +131,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.09815931, y: 0.065439224}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.09375, y: 1.59375}
+    oldSize: {x: 0.90625, y: 0.71875}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.6325808, y: 1.1308784}
+  m_Size: {x: 0.87, y: 0.71}
   m_EdgeRadius: 0
 --- !u!114 &7925825935542092685
 MonoBehaviour:
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChargeInteraction
   _interactionArea: {fileID: 0}
-  _clicksToActivate: 10
+  _clicksToActivate: 13
   _currentClicks: 0
 --- !u!1 &6194926406261948219
 GameObject:
@@ -251,4 +251,4 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.75
+  m_Radius: 0.61

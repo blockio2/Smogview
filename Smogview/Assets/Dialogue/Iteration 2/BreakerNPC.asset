@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 261ab53e581089f44af1b9315f7dc5c0, type: 3}
-  m_Name: ElevatorNPC
+  m_Name: BreakerNPC
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAsset
   dialogue:
   - I can't get to work since the elevator shut down.
   - I mean I could turn the power back on but I already called out...
-  - You forgot where the elevator it is? Where have you been?
-  - If you really want to get out of here -
-  - Right down the hallway and up.
+  - And the wires by it are all jumbled up. Just seems like too much of a hassle.
+  - If you want to try, I wish you the best of luck.
