@@ -7,6 +7,7 @@ using TMPro;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] GameObject pauseScreen;
+    [SerializeField] GameObject lensScreen;
 
 
     private Rigidbody2D _rb;
@@ -126,8 +127,16 @@ public class PlayerMovement : MonoBehaviour
     {
         pauseScreen.SetActive(!pauseScreen.activeSelf);
 
-        if(!pauseScreen.activeSelf)gameObject.GetComponent<PlayerMovement>().enabled = true; 
-            else gameObject.GetComponent<PlayerMovement>().enabled = false;
+        if (!pauseScreen.activeSelf)
+        {
+            gameObject.GetComponent<PlayerMovement>().enabled = true;
+            lensScreen.SetActive(true);
+        }
+        else 
+        {
+            gameObject.GetComponent<PlayerMovement>().enabled = false;
+            lensScreen.SetActive(false);
+        }
 
     }
 

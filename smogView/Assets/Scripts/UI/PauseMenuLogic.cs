@@ -21,7 +21,8 @@ public class PauseMenuLogic : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadSceneAsync("StartScreen");
+        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("StartScreen");
     }
 
 
