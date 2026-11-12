@@ -1,3 +1,4 @@
+using NUnit.Framework.Constraints;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,7 @@ namespace Smogview.UI
         // Each group includes the whole icon, including Default's ring and eye layers.
         [SerializeField] private CanvasGroup[] iconGroups;
         [SerializeField] private Image[] activeMarks;
+        [SerializeField] private Image[] vignette;
         [SerializeField] private Text[] labels;
         [SerializeField] private Color[] lensColors =
         {
@@ -62,8 +64,19 @@ namespace Smogview.UI
                 activeMarks[i].color = lensColors[i];
                 labels[i].color = active ? lensColors[i] : new Color32(206, 210, 214, 255);
                 labels[i].fontStyle = active ? FontStyle.Bold : FontStyle.Normal;
+
+                //used to show vignettes
+                if (vignette[i] == null) continue;
+                vignette[i].enabled = active;
+                
+
+
             }
+
+        
+
+
+
         }
     }
 }
-
