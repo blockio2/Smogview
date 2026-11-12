@@ -144,7 +144,7 @@ Transform:
   m_GameObject: {fileID: 5576990}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.37, y: 0, z: 0}
+  m_LocalPosition: {x: 63, y: -238.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2201,7 +2201,7 @@ Transform:
   m_GameObject: {fileID: 542985683}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.9950962, y: -23.514957, z: 0}
+  m_LocalPosition: {x: 59.39, y: -266.86, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2258,6 +2258,14 @@ PrefabInstance:
     - target: {fileID: 180762119601692057, guid: 795d41b17f5832b42a2966cba17471cd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1737706468775726108, guid: 795d41b17f5832b42a2966cba17471cd, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1737706468775726108, guid: 795d41b17f5832b42a2966cba17471cd, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2179227941429365566, guid: 795d41b17f5832b42a2966cba17471cd, type: 3}
       propertyPath: m_Name
@@ -3463,6 +3471,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1737706468775726108, guid: 795d41b17f5832b42a2966cba17471cd, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1737706468775726108, guid: 795d41b17f5832b42a2966cba17471cd, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2179227941429365566, guid: 795d41b17f5832b42a2966cba17471cd, type: 3}
       propertyPath: m_Name
       value: Hallway Clutter
@@ -3514,11 +3530,11 @@ PrefabInstance:
       objectReference: {fileID: 148384654}
     - target: {fileID: 6857084750919686346, guid: 05e4282fc7e6eae43bdad10ccd509cad, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.59
+      value: 46.98
       objectReference: {fileID: 0}
     - target: {fileID: 6857084750919686346, guid: 05e4282fc7e6eae43bdad10ccd509cad, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -17.46
+      value: -256.05
       objectReference: {fileID: 0}
     - target: {fileID: 6857084750919686346, guid: 05e4282fc7e6eae43bdad10ccd509cad, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3552,6 +3568,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7390681023208920063, guid: 05e4282fc7e6eae43bdad10ccd509cad, type: 3}
+      propertyPath: lensScreen
+      value: 
+      objectReference: {fileID: 678930820}
+    - target: {fileID: 7390681023208920063, guid: 05e4282fc7e6eae43bdad10ccd509cad, type: 3}
+      propertyPath: pauseScreen
+      value: 
+      objectReference: {fileID: 148384654}
     m_RemovedComponents:
     - {fileID: 6312035005513428557, guid: 05e4282fc7e6eae43bdad10ccd509cad, type: 3}
     m_RemovedGameObjects: []
@@ -5008,7 +5032,7 @@ Transform:
   m_GameObject: {fileID: 1189395462}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.67610204, y: -24.965431, z: 0}
+  m_LocalPosition: {x: 61.061195, y: -268.31046, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5115,7 +5139,7 @@ Transform:
   m_GameObject: {fileID: 1198539997}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.52, y: -20, z: 0}
+  m_LocalPosition: {x: 47.865093, y: -263.34503, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -53257,7 +53281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 180762119601692057, guid: 7aa49b0c76492ae40b958f6135a09452, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.83
+      value: -13.14
       objectReference: {fileID: 0}
     - target: {fileID: 180762119601692057, guid: 7aa49b0c76492ae40b958f6135a09452, type: 3}
       propertyPath: m_LocalPosition.y
@@ -57059,7 +57083,7 @@ Transform:
   m_GameObject: {fileID: 2025079995}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 63.369995, y: -238.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -57153,6 +57177,14 @@ PrefabInstance:
     - target: {fileID: 180762119601692057, guid: 795d41b17f5832b42a2966cba17471cd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1737706468775726108, guid: 795d41b17f5832b42a2966cba17471cd, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1737706468775726108, guid: 795d41b17f5832b42a2966cba17471cd, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2179227941429365566, guid: 795d41b17f5832b42a2966cba17471cd, type: 3}
       propertyPath: m_Name
@@ -57392,6 +57424,10 @@ PrefabInstance:
     - target: {fileID: 5279513286712281697, guid: 733c309156a9ffa41bb837947725fe1e, type: 3}
       propertyPath: m_Name
       value: WorldCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7048404973768096077, guid: 733c309156a9ffa41bb837947725fe1e, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7486752072201319432, guid: 733c309156a9ffa41bb837947725fe1e, type: 3}
       propertyPath: m_Camera

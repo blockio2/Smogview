@@ -8,6 +8,12 @@ public class pausemenucontrols : MonoBehaviour
 
     public bool otherUiOpen = false;
 
+    void Awake()
+    {
+     //   Pause();
+    }
+
+
     //Called to enable and disable the pause menu(currently bound to escape)
     public void Pause()
     {
@@ -23,7 +29,8 @@ public class pausemenucontrols : MonoBehaviour
             else
             {
                 gameObject.GetComponent<PlayerMovement>().enabled = false;
-                lensScreen.SetActive(false); 
+                lensScreen.SetActive(false);
+                if (GameObject.Find("Wire Overlay") == null) return;
                 GameObject.Find("Wire Overlay").GetComponent<WireInteractionUI>().Close();
             }
 
