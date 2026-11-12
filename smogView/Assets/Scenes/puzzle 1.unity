@@ -5281,6 +5281,10 @@ PrefabInstance:
       propertyPath: PlayerCanvas
       value: 
       objectReference: {fileID: 1321004748}
+    - target: {fileID: 6179660550858692502, guid: 985c660425b24214d9be3692ff9a1a6e, type: 3}
+      propertyPath: m_EditorClassIdentifier
+      value: Assembly-CSharp::PauseMenuLogic
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8207,12 +8211,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 458898226}
     - target: {fileID: 2025129293215477618, guid: 05e4282fc7e6eae43bdad10ccd509cad, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1156035770}
+    - target: {fileID: 2025129293215477618, guid: 05e4282fc7e6eae43bdad10ccd509cad, type: 3}
       propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetLens
       objectReference: {fileID: 0}
     - target: {fileID: 2025129293215477618, guid: 05e4282fc7e6eae43bdad10ccd509cad, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Pause
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025129293215477618, guid: 05e4282fc7e6eae43bdad10ccd509cad, type: 3}
       propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: LensManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2025129293215477618, guid: 05e4282fc7e6eae43bdad10ccd509cad, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: pausemenucontrols, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2782879772281036006, guid: 05e4282fc7e6eae43bdad10ccd509cad, type: 3}
       propertyPath: m_Name
@@ -8277,6 +8293,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2782879772281036006, guid: 05e4282fc7e6eae43bdad10ccd509cad, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1156035765}
+    - targetCorrespondingSourceObject: {fileID: 2782879772281036006, guid: 05e4282fc7e6eae43bdad10ccd509cad, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1156035770}
   m_SourcePrefab: {fileID: 100100000, guid: 05e4282fc7e6eae43bdad10ccd509cad, type: 3}
 --- !u!114 &1156035763 stripped
 MonoBehaviour:
@@ -8314,6 +8333,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.PlayerWireCarrier
   lenses: {fileID: 458898226}
   ui: {fileID: 469035336}
+--- !u!114 &1156035770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458898218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7546dd07ee609645a37e69aceba6b2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  pauseScreen: {fileID: 20166991}
+  lensScreen: {fileID: 1321004748}
 --- !u!1 &1183002371
 GameObject:
   m_ObjectHideFlags: 0

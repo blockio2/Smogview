@@ -7,16 +7,14 @@ public class PauseMenuLogic : MonoBehaviour
     [SerializeField] private GameObject lensCanvas;
     [SerializeField] private GameObject player;
 
-
-
-    private void FixedUpdate()
+    private void OnEnable()
     {
-        if (gameObject.activeSelf)
-        {
             player.GetComponent<PlayerMovement>().enabled = false;
-            lensCanvas.SetActive(false);
-        }       
 
+        if (lensCanvas != null)
+        {
+            lensCanvas.SetActive(false);
+        }
     }
 
     public void MainMenu()

@@ -3,12 +3,10 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
 using TMPro;
+using Smogview.Wires;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] GameObject pauseScreen;
-    [SerializeField] GameObject lensScreen;
-
 
     private Rigidbody2D _rb;
 
@@ -16,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private float _moveSpeed = 5f;
     private List<float> _speedModifiers = new List<float>();
+
+    public bool uiOpen = false;
     public float MoveSpeed { get; set; }
     public bool CanMove { get; set; } = true;
     // Wire-system integration: pause walking only while choosing a wire/socket in the overlay.
@@ -122,23 +122,7 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-    //Called to enable and disable the pause menu(currently bound to escape)
-    public void Pause()
-    {
-        pauseScreen.SetActive(!pauseScreen.activeSelf);
-
-        if (!pauseScreen.activeSelf)
-        {
-            gameObject.GetComponent<PlayerMovement>().enabled = true;
-            lensScreen.SetActive(true);
-        }
-        else 
-        {
-            gameObject.GetComponent<PlayerMovement>().enabled = false;
-            lensScreen.SetActive(false);
-        }
-
-    }
+   
 
 
 }

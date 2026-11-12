@@ -95,7 +95,7 @@ namespace Smogview.Wires
         public void OpenComputer(WireStation target) { Open(target,true); }
         private void Open(WireStation target, bool isComputer)
         {
-            station=target; computer=isComputer; panel.SetActive(true);
+            station =target; computer=isComputer; panel.SetActive(true);
             // Movement is blocked only while choosing a port; 1-4 lens controls stay enabled.
             player.InteractionBlocked=true; movement.ControlsBlocked=true;
             Refresh();
@@ -115,10 +115,11 @@ namespace Smogview.Wires
             string identity = wire != null && controller.MentalUnlocked && lenses.CurrentLens==LensManager.lens.Lmental ? wire.color+" wire" : "wire";
             status.text=wire == null ? "" : "Carrying "+identity+"   |   R: return in Physical lens";
             if(!IsOpen) return;
-            if((Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame) ||
-                Vector2.Distance(carrier.transform.position,station.transform.position)>3f ||
-                (computer && !controller.ComputerPowered)) { Close(); return; }
+            //if((Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame) ||
+            //    Vector2.Distance(carrier.transform.position,station.transform.position)>3f ||
+            //    (computer && !controller.ComputerPowered)) { Close(); return; }
             Refresh();
+
         }
         private void Refresh()
         {
