@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 261ab53e581089f44af1b9315f7dc5c0, type: 3}
+  m_Name: KitchenDialogue
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueAsset
+  dialogue:
+  - I slide open the three small drawers in my kitchen area and am met with nothing other than the usual kitchen utensils.
+  - "I flip open the doors to the lower section to look in the space under the pipes, but similarly don\u2019t find what I\u2019m looking for."

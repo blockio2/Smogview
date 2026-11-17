@@ -20,5 +20,8 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Iteration 3 Puzzle.unity
     guid: acbf65820e29af04a9fd919b628ff00c
+  - enabled: 1
+    path: Assets/Scenes/Iteration 4 Puzzle.unity
+    guid: 95c7ea8119393f24d9d4650ed41083b7
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

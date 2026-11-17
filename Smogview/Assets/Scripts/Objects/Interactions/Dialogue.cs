@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class NPCInteraction : Interactable
+public class Dialogue : Interactable
 {
     [SerializeField] DialogueAsset mainText;
     [SerializeField] DialogueAsset finishedText;
@@ -40,7 +40,7 @@ public class NPCInteraction : Interactable
     public override void OnInteract()
     {
         _npcTextArea.SetActive(true);
-        _npcTextArea.transform.position = new Vector2(transform.position.x, transform.position.y - 1.2f);
+        _npcTextArea.transform.position = new Vector2(transform.position.x + 2.6f, transform.position.y - 0.2f);
 
         ShowDialogue();
     }
@@ -80,8 +80,8 @@ public class NPCInteraction : Interactable
 
         _dialogueCounter++;
 
-
-        StartCoroutine("DialogueClearTimer");
+        //Don't clear dialgoue after time
+        //StartCoroutine("DialogueClearTimer");
     }
 
     /// <summary>
@@ -96,6 +96,11 @@ public class NPCInteraction : Interactable
     IEnumerator DialogueClearTimer()
     {
         yield return new WaitForSeconds(_dialogueDisplayTime);
+        EndDialogue();
+    }
+
+    public override void PlayerLeaves()
+    {
         EndDialogue();
     }
 }

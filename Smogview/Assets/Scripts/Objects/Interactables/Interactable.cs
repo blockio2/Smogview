@@ -44,6 +44,6 @@ public abstract class Interactable : MonoBehaviour
 
     public virtual void OnTriggerExit2D(Collider2D collision)
     {
-        PlayerLeaves();
+        
     }
 }
