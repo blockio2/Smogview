@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: IntroNPC
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAsset
   dialogue:
-  - Hey, it's been a while since I've seen you out.
-  - I think the powers out again. Gonna do something about it this time?
-  - There's some clutter in the hallway. We'd all appreciate if someone took a step towards cleaning it.
-  - Hope to see you around.
+  - Glad you made it out.
+  - There's some clutter in the hallway. If you'd like to help me clean it up it would help greatly.
+  - (End of current test)

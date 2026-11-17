@@ -41,6 +41,12 @@ public class Player : MonoBehaviour
             _playerMovement.CanMove = false;
         else
             _playerMovement.CanMove = true;
+
+        if(_currentTarget && FindInteractionTarget() == null)
+        {
+            _currentTarget.PlayerLeaves();
+            _currentTarget = null;
+        }
     }
 
     private Interactable FindInteractionTarget()

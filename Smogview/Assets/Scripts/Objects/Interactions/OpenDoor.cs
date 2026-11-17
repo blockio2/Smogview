@@ -9,7 +9,7 @@ public class OpenDoor : Interaction
     private SpriteRenderer _spriteRenderer;
     [SerializeField] private bool _open = false;
     [SerializeField] private Sprite _closedSprite;
-    [SerializeField] private Sprite _openSprite;
+    [SerializeField] private GameObject _openSprite;
 
     private void Awake()
     {
@@ -35,13 +35,19 @@ public class OpenDoor : Interaction
     public void Open()
     {
         _doorCollider.enabled = false;
-        _spriteRenderer.sprite = _openSprite;
+        _spriteRenderer.enabled = false;
+
+        _openSprite.SetActive(true);
     }
 
     public void Close()
     {
         _doorCollider.enabled = true;
+
+        _spriteRenderer.enabled = true;
         _spriteRenderer.sprite = _closedSprite;
+
+        _openSprite.SetActive(false);
     }
 
 }
