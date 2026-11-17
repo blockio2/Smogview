@@ -48,7 +48,6 @@ namespace Smogview.UI
         // Only changes the display; lens switching and world visibility stay in LensSwitching.
         private void Refresh(LensManager.lens activeLens)
         {
-            Debug.Log("i guess");
             SelectedIndex = (int)activeLens;
             for (int i = 0; i < labels.Length; i++)
             {

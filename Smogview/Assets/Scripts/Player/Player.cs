@@ -8,6 +8,23 @@ public class Player : MonoBehaviour
     private ContactFilter2D _contactFilter;
     private readonly List<Collider2D> _results = new List<Collider2D>();
     private Interactable _currentTarget;
+
+
+    [SerializeField] private Dialogue _firstClutterDialogue;
+
+    private int _clutterCleaned = 0;
+    public int ClutterCleaned {
+        get { return _clutterCleaned; } 
+        set 
+        { 
+            _clutterCleaned = value;
+            if(ClutterCleaned == 1)
+            {
+                _firstClutterDialogue.ShowDialogue();
+                _firstClutterDialogue.StartCoroutine("DialogueClearTimer");
+            }
+        } 
+    }
     
     /// <summary>
     /// Whether or not the player is holding an object currently
@@ -29,6 +46,7 @@ public class Player : MonoBehaviour
 
     public void Awake()
     {
+
         _interactionCollider = transform.Find("InteractionHitbox").GetComponent<CircleCollider2D>();
         _playerMovement = GetComponent<PlayerMovement>();
         _contactFilter.useTriggers = true;
@@ -105,6 +123,11 @@ public class Player : MonoBehaviour
 
             if (context.performed)
             {
+                if (_currentTarget.GetComponent<Clutter>())
+                {
+                    _currentTarget.GetComponent<ChargeInteraction>().ClickMultiplier = 1 + (ClutterCleaned / 3);
+                }
+
                 _currentTarget.OnInteract();
             }
         }

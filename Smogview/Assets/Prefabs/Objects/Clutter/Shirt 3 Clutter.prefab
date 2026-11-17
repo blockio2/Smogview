@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1737706468775726108}
   - component: {fileID: 7925825935542092685}
   - component: {fileID: 4588752194362019178}
-  - component: {fileID: -8549815155986819485}
+  - component: {fileID: -2897450856887674252}
   m_Layer: 0
   m_Name: Shirt 3 Clutter
   m_TagString: Untagged
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RemoveOnHold
   _removedObject: {fileID: 0}
---- !u!114 &-8549815155986819485
+--- !u!114 &-2897450856887674252
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -178,11 +178,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2179227941429365566}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c4b18e823131a14daf72e1fe8d3b3ec, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b84e2dfb43601f428521d003fc7764a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ChargeInteraction
-  _interactionArea: {fileID: 0}
-  _clicksToActivate: 13
+  m_EditorClassIdentifier: Assembly-CSharp::Clutter
+  _interactionArea: {fileID: 3265718123764445282}
+  _clicksToActivate: 10
   _currentClicks: 0
 --- !u!1 &6194926406261948219
 GameObject:
@@ -251,4 +251,4 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.61
+  m_Radius: 0.4

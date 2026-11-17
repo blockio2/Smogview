@@ -108,6 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPC
   _interactionArea: {fileID: 637969561305474172}
+  _interactable: 1
   mainText: {fileID: 11400000, guid: 234b50fd916f08647abe272d3d29e441, type: 2}
   finishedText: {fileID: 0}
 --- !u!70 &7066335174675683171
@@ -159,6 +160,7 @@ GameObject:
   - component: {fileID: 9172949526864918327}
   - component: {fileID: 7767502949255118498}
   - component: {fileID: 9168528907615742888}
+  - component: {fileID: 4375772498241995447}
   m_Layer: 0
   m_Name: DefaultNPC
   m_TagString: Untagged
@@ -255,6 +257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPC
   _interactionArea: {fileID: 2019681964440974615}
+  _interactable: 1
   mainText: {fileID: 11400000, guid: fb1e5a5c33c2673419c43e9299195d74, type: 2}
   finishedText: {fileID: 0}
 --- !u!70 &9168528907615742888
@@ -294,6 +297,19 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.4}
   m_Size: {x: 0.7, y: 0.85}
   m_Direction: 0
+--- !u!114 &4375772498241995447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4638204037625402082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb5c69e50bb1dc459440089a7411eca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DisableOnLens
+  _lens: 2
 --- !u!1 &5041916462693595682
 GameObject:
   m_ObjectHideFlags: 0

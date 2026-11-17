@@ -5,8 +5,9 @@ using TMPro;
 
 public class Dialogue : Interactable
 {
-    [SerializeField] DialogueAsset mainText;
-    [SerializeField] DialogueAsset finishedText;
+    [SerializeField] private bool _interactable = true;
+    [SerializeField] private DialogueAsset mainText;
+    [SerializeField] private DialogueAsset finishedText;
     private GameObject _npcTextArea;
     private Image _moreTextIndicator;
     private TMP_Text _npcText;
@@ -17,7 +18,10 @@ public class Dialogue : Interactable
 
     public override void Awake()
     {
-        base.Awake();
+        if (_interactable)
+        {
+            base.Awake();
+        }
 
         _npcTextArea = GameObject.Find("NPCTextArea");
         _moreTextIndicator = _npcTextArea.transform.Find("Indicator").GetComponent<Image>();
@@ -39,9 +43,6 @@ public class Dialogue : Interactable
     /// </summary>
     public override void OnInteract()
     {
-        _npcTextArea.SetActive(true);
-        _npcTextArea.transform.position = new Vector2(transform.position.x + 2.6f, transform.position.y - 0.2f);
-
         ShowDialogue();
     }
 
@@ -51,6 +52,9 @@ public class Dialogue : Interactable
     /// </summary>
     public void ShowDialogue()
     {
+        _npcTextArea.SetActive(true);
+        _npcTextArea.transform.position = new Vector2(transform.position.x + 2.6f, transform.position.y - 0.2f);
+
         StopAllCoroutines();
 
         //Check if all dialogue has been seen. Reset counter to play it again

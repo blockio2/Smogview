@@ -9,6 +9,7 @@ public class ChargeInteraction : Interactable
     /// How many clicks before all interactions are activated
     /// </summary>
     [SerializeField] private int _clicksToActivate;
+    public int ClickMultiplier { get; set; } = 1;
     public int _currentClicks = 0;
 
     InteractionIndicatorUI _interactionIndicator;
@@ -30,7 +31,7 @@ public class ChargeInteraction : Interactable
     /// </summary>
     public override void OnInteract()
     {
-        _currentClicks++;
+        _currentClicks += ClickMultiplier;
 
         _interactionIndicator.Active = true;
         //Move indicator wheel above object position and change the fill amount based on completion percent

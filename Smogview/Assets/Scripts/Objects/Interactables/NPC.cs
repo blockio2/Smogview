@@ -14,14 +14,7 @@ public class NPC : MonoBehaviour
 
     public void Update()
     {
-        if(_lensSwitching.CurrentLens == LensManager.lens.Lsocial)
-        {
-            _defaultNPC.SetActive(false);
-        }
-        else
-        {
-            _defaultNPC.SetActive(true);
-        }
+   
     }
 
 }
