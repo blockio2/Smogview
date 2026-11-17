@@ -2,16 +2,21 @@ using UnityEngine;
 
 namespace Smogview.Wires
 {
-    public sealed class WireSocket : MonoBehaviour
+    public class WireSocket : MonoBehaviour
     {
+        [Tooltip("Uses the closest parent PowerBox at startup, leave empty for a child socket")]
         public PowerBox box;
         public WireColor requiredColor;
-        public bool behindGrate;
         [SerializeField] private Wire connectedWire;
         public Wire ConnectedWire { get => connectedWire; internal set => connectedWire = value; }
-        // Connected alone is insufficient: the lead needs upstream power AND the matching color.
-        public bool Powered => ConnectedWire != null && ConnectedWire.Powered && ConnectedWire.color == requiredColor;
-        // Grate access governs changing a connection, not electricity through an existing connection.
-        public bool Accessible => !behindGrate || box.controller == null || box.controller.GrateOpen;
+        protected virtual void Awake()
+        {
+            var parentBox = GetComponentInParent<PowerBox>(true);
+            if (parentBox != null) box = parentBox;
+        }
+        // A connected wire needs power, its assigned box and a matching socket color
+        public bool Powered => ConnectedWire != null && ConnectedWire.Powered &&
+            ConnectedWire.MatchesTarget(box) && ConnectedWire.color == requiredColor;
+        public virtual bool Accessible => isActiveAndEnabled;
     }
 }

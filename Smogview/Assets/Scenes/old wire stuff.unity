@@ -199,7 +199,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2ab90cc6ed23d742bd86242b3d01550, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocketVisual
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocketVisual
   socket: {fileID: 944577539}
   breakerOutput: {fileID: 0}
   lenses: {fileID: 458898226}
@@ -374,15 +374,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 54123228}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4b629cc8efbdcb429d46793ef24dc56, type: 3}
+  m_Script: {fileID: 11500000, guid: 138bdf062c4242fca7382114d3baaf42, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireStation
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireStation
   _interactionArea: {fileID: 0}
-  kind: 0
   box: {fileID: 54123232}
-  controller: {fileID: 1880659636}
   carrier: {fileID: 1156035765}
-  ui: {fileID: 469035336}
+  ui: {fileID: 1661057720}
+  kind: 0
+  controller: {fileID: 1880659636}
 --- !u!114 &54123232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,12 +392,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 54123228}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8897984a73b710e4fa45d7257d553c0d, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f74a573838c42c68bb913a492b10926, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.PowerBox
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOnePowerBox
   displayName: GRATE BOX
   network: {fileID: 792481633}
-  controller: {fileID: 1880659636}
   inputs:
   - {fileID: 352090847}
   - {fileID: 2091727959}
@@ -408,6 +407,7 @@ MonoBehaviour:
   breaker: 0
   breakerOn: 0
   requireAllInputs: 0
+  controller: {fileID: 1880659636}
   brokenInputLights: 0
   outputsBehindGrate: 1
   outputsViaTangleOnly: 0
@@ -460,7 +460,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireVisual
   wire: {fileID: 63343216}
   lenses: {fileID: 458898226}
-  controller: {fileID: 1880659636}
 --- !u!120 &63343215
 LineRenderer:
   serializedVersion: 3
@@ -647,7 +646,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireVisual
   wire: {fileID: 68137852}
   lenses: {fileID: 458898226}
-  controller: {fileID: 1880659636}
 --- !u!120 &68137851
 LineRenderer:
   serializedVersion: 3
@@ -1125,15 +1123,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 133210667}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4b629cc8efbdcb429d46793ef24dc56, type: 3}
+  m_Script: {fileID: 11500000, guid: 138bdf062c4242fca7382114d3baaf42, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireStation
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireStation
   _interactionArea: {fileID: 0}
-  kind: 0
   box: {fileID: 133210671}
-  controller: {fileID: 1880659636}
   carrier: {fileID: 1156035765}
-  ui: {fileID: 469035336}
+  ui: {fileID: 1661057720}
+  kind: 0
+  controller: {fileID: 1880659636}
 --- !u!114 &133210671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1143,12 +1141,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 133210667}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8897984a73b710e4fa45d7257d553c0d, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f74a573838c42c68bb913a492b10926, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.PowerBox
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOnePowerBox
   displayName: THIRD BOX
   network: {fileID: 792481633}
-  controller: {fileID: 1880659636}
   inputs:
   - {fileID: 800711171}
   - {fileID: 241289712}
@@ -1160,6 +1157,7 @@ MonoBehaviour:
   breaker: 0
   breakerOn: 0
   requireAllInputs: 0
+  controller: {fileID: 1880659636}
   brokenInputLights: 0
   outputsBehindGrate: 0
   outputsViaTangleOnly: 1
@@ -1436,13 +1434,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 208082060}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88ff170133bf7164ca04eafd0651d3ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a708fa99ecc4b0db8fee448085a9d20, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocket
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocket
   box: {fileID: 1389336212}
   requiredColor: 2
-  behindGrate: 0
   connectedWire: {fileID: 0}
+  behindGrate: 0
 --- !u!1 &215298240
 GameObject:
   m_ObjectHideFlags: 0
@@ -1495,7 +1493,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireVisual
   wire: {fileID: 215298241}
   lenses: {fileID: 458898226}
-  controller: {fileID: 1880659636}
 --- !u!120 &215298243
 LineRenderer:
   serializedVersion: 3
@@ -1674,7 +1671,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2ab90cc6ed23d742bd86242b3d01550, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocketVisual
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocketVisual
   socket: {fileID: 1907819276}
   breakerOutput: {fileID: 0}
   lenses: {fileID: 458898226}
@@ -1783,7 +1780,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2ab90cc6ed23d742bd86242b3d01550, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocketVisual
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocketVisual
   socket: {fileID: 1536772023}
   breakerOutput: {fileID: 0}
   lenses: {fileID: 458898226}
@@ -1892,7 +1889,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2ab90cc6ed23d742bd86242b3d01550, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocketVisual
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocketVisual
   socket: {fileID: 208082062}
   breakerOutput: {fileID: 0}
   lenses: {fileID: 458898226}
@@ -1999,13 +1996,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 241289710}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88ff170133bf7164ca04eafd0651d3ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a708fa99ecc4b0db8fee448085a9d20, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocket
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocket
   box: {fileID: 133210671}
   requiredColor: 1
-  behindGrate: 0
   connectedWire: {fileID: 0}
+  behindGrate: 0
 --- !u!1 &244866109
 GameObject:
   m_ObjectHideFlags: 0
@@ -2438,7 +2435,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireVisual
   wire: {fileID: 283881569}
   lenses: {fileID: 458898226}
-  controller: {fileID: 1880659636}
 --- !u!120 &283881568
 LineRenderer:
   serializedVersion: 3
@@ -2849,15 +2845,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 309205369}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4b629cc8efbdcb429d46793ef24dc56, type: 3}
+  m_Script: {fileID: 11500000, guid: 138bdf062c4242fca7382114d3baaf42, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireStation
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireStation
   _interactionArea: {fileID: 0}
-  kind: 2
   box: {fileID: 133210671}
-  controller: {fileID: 1880659636}
   carrier: {fileID: 1156035765}
-  ui: {fileID: 469035336}
+  ui: {fileID: 1661057720}
+  kind: 2
+  controller: {fileID: 1880659636}
 --- !u!1001 &327368019
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2966,13 +2962,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 339304014}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88ff170133bf7164ca04eafd0651d3ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a708fa99ecc4b0db8fee448085a9d20, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocket
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocket
   box: {fileID: 1389336212}
   requiredColor: 0
-  behindGrate: 0
   connectedWire: {fileID: 0}
+  behindGrate: 0
 --- !u!1 &352090845
 GameObject:
   m_ObjectHideFlags: 0
@@ -3015,13 +3011,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 352090845}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88ff170133bf7164ca04eafd0651d3ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a708fa99ecc4b0db8fee448085a9d20, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocket
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocket
   box: {fileID: 54123232}
   requiredColor: 1
-  behindGrate: 0
   connectedWire: {fileID: 0}
+  behindGrate: 0
 --- !u!1 &381701768
 GameObject:
   m_ObjectHideFlags: 0
@@ -3070,7 +3066,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireVisual
   wire: {fileID: 381701772}
   lenses: {fileID: 458898226}
-  controller: {fileID: 1880659636}
 --- !u!120 &381701771
 LineRenderer:
   serializedVersion: 3
@@ -3253,7 +3248,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2ab90cc6ed23d742bd86242b3d01550, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocketVisual
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocketVisual
   socket: {fileID: 1276379354}
   breakerOutput: {fileID: 0}
   lenses: {fileID: 458898226}
@@ -4515,7 +4510,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2ab90cc6ed23d742bd86242b3d01550, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocketVisual
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocketVisual
   socket: {fileID: 1701097474}
   breakerOutput: {fileID: 0}
   lenses: {fileID: 458898226}
@@ -4580,79 +4575,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
---- !u!1 &469035335
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 469035337}
-  - component: {fileID: 469035336}
-  m_Layer: 0
-  m_Name: Wire Overlay
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &469035336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 469035335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a885bf8b6a00064d8c13c79019cbcac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireInteractionUI
-  carrier: {fileID: 1156035765}
-  player: {fileID: 1156035764}
-  movement: {fileID: 1156035763}
-  controller: {fileID: 1880659636}
-  lenses: {fileID: 458898226}
-  inputs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  outputs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  inputLabels:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  outputLabels:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
---- !u!224 &469035337
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 469035335}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2051517821}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &476010026
 GameObject:
   m_ObjectHideFlags: 0
@@ -4697,7 +4619,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2ab90cc6ed23d742bd86242b3d01550, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocketVisual
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocketVisual
   socket: {fileID: 578071503}
   breakerOutput: {fileID: 0}
   lenses: {fileID: 458898226}
@@ -4806,7 +4728,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2ab90cc6ed23d742bd86242b3d01550, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocketVisual
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocketVisual
   socket: {fileID: 0}
   breakerOutput: {fileID: 1217190920}
   lenses: {fileID: 458898226}
@@ -5075,7 +4997,6 @@ GameObject:
   m_Component:
   - component: {fileID: 542040879}
   - component: {fileID: 542040881}
-  - component: {fileID: 542040880}
   m_Layer: 0
   m_Name: Power feedback
   m_TagString: Untagged
@@ -5098,103 +5019,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2051517821}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &542040880
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 542040878}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!114 &542040881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5206,12 +5030,11 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8535ddc6fceafb7478226c352f18e6f3, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.PuzzlePowerFeedback
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzlePowerFeedback
   controller: {fileID: 1880659636}
   grateBars: {fileID: 1730516502}
   elevatorLamp: {fileID: 1599269931}
   objective: {fileID: 203298429}
-  audioSource: {fileID: 542040880}
   showProgressHints: 0
 --- !u!1 &542043583
 GameObject:
@@ -5257,7 +5080,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2ab90cc6ed23d742bd86242b3d01550, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocketVisual
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocketVisual
   socket: {fileID: 339304016}
   breakerOutput: {fileID: 0}
   lenses: {fileID: 458898226}
@@ -5440,13 +5263,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 578071502}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88ff170133bf7164ca04eafd0651d3ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a708fa99ecc4b0db8fee448085a9d20, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocket
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocket
   box: {fileID: 1344379746}
   requiredColor: 1
-  behindGrate: 0
   connectedWire: {fileID: 0}
+  behindGrate: 0
 --- !u!4 &578071504
 Transform:
   m_ObjectHideFlags: 0
@@ -5511,7 +5334,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireVisual
   wire: {fileID: 581381332}
   lenses: {fileID: 458898226}
-  controller: {fileID: 1880659636}
 --- !u!120 &581381331
 LineRenderer:
   serializedVersion: 3
@@ -5694,7 +5516,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2ab90cc6ed23d742bd86242b3d01550, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocketVisual
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocketVisual
   socket: {fileID: 2091727959}
   breakerOutput: {fileID: 0}
   lenses: {fileID: 458898226}
@@ -6222,18 +6044,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 752580149}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8897984a73b710e4fa45d7257d553c0d, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f74a573838c42c68bb913a492b10926, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.PowerBox
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOnePowerBox
   displayName: COMPUTER
   network: {fileID: 792481633}
-  controller: {fileID: 1880659636}
   inputs:
   - {fileID: 1791370677}
   outputs: []
   breaker: 0
   breakerOn: 0
   requireAllInputs: 0
+  controller: {fileID: 1880659636}
   brokenInputLights: 0
   outputsBehindGrate: 0
   outputsViaTangleOnly: 0
@@ -6247,15 +6069,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 752580149}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4b629cc8efbdcb429d46793ef24dc56, type: 3}
+  m_Script: {fileID: 11500000, guid: 138bdf062c4242fca7382114d3baaf42, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireStation
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireStation
   _interactionArea: {fileID: 0}
-  kind: 3
   box: {fileID: 752580153}
-  controller: {fileID: 1880659636}
   carrier: {fileID: 1156035765}
-  ui: {fileID: 469035336}
+  ui: {fileID: 1661057720}
+  kind: 3
+  controller: {fileID: 1880659636}
 --- !u!1001 &781073790
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6374,6 +6196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69f20b3d3e938994aaca4955d92483ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireNetwork
+  ui: {fileID: 0}
   wires:
   - {fileID: 2015244221}
   - {fileID: 1217190920}
@@ -6450,13 +6273,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 800711169}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88ff170133bf7164ca04eafd0651d3ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a708fa99ecc4b0db8fee448085a9d20, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocket
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocket
   box: {fileID: 133210671}
   requiredColor: 0
-  behindGrate: 0
   connectedWire: {fileID: 0}
+  behindGrate: 0
 --- !u!1 &820220362
 GameObject:
   m_ObjectHideFlags: 0
@@ -6505,7 +6328,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireVisual
   wire: {fileID: 820220366}
   lenses: {fileID: 458898226}
-  controller: {fileID: 1880659636}
 --- !u!120 &820220365
 LineRenderer:
   serializedVersion: 3
@@ -6873,7 +6695,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2ab90cc6ed23d742bd86242b3d01550, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocketVisual
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocketVisual
   socket: {fileID: 957420814}
   breakerOutput: {fileID: 0}
   lenses: {fileID: 458898226}
@@ -6985,13 +6807,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 944577537}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88ff170133bf7164ca04eafd0651d3ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a708fa99ecc4b0db8fee448085a9d20, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocket
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocket
   box: {fileID: 54123232}
   requiredColor: 2
-  behindGrate: 1
   connectedWire: {fileID: 0}
+  behindGrate: 1
 --- !u!1 &957420813
 GameObject:
   m_ObjectHideFlags: 0
@@ -7018,13 +6840,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 957420813}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88ff170133bf7164ca04eafd0651d3ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a708fa99ecc4b0db8fee448085a9d20, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocket
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocket
   box: {fileID: 1366370964}
   requiredColor: 1
-  behindGrate: 0
   connectedWire: {fileID: 1217190920}
+  behindGrate: 0
 --- !u!4 &957420815
 Transform:
   m_ObjectHideFlags: 0
@@ -7609,7 +7431,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireVisual
   wire: {fileID: 1077926222}
   lenses: {fileID: 458898226}
-  controller: {fileID: 1880659636}
 --- !u!120 &1077926224
 LineRenderer:
   serializedVersion: 3
@@ -8029,7 +7850,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2ab90cc6ed23d742bd86242b3d01550, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocketVisual
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocketVisual
   socket: {fileID: 241289712}
   breakerOutput: {fileID: 0}
   lenses: {fileID: 458898226}
@@ -8138,7 +7959,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2ab90cc6ed23d742bd86242b3d01550, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocketVisual
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocketVisual
   socket: {fileID: 352090847}
   breakerOutput: {fileID: 0}
   lenses: {fileID: 458898226}
@@ -8383,7 +8204,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.PlayerWireCarrier
   lenses: {fileID: 458898226}
-  ui: {fileID: 469035336}
+  ui: {fileID: 1661057720}
+--- !u!114 &1156035766 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7390681023208920063, guid: 05e4282fc7e6eae43bdad10ccd509cad, type: 3}
+  m_PrefabInstance: {fileID: 1156035762}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458898218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7546dd07ee609645a37e69aceba6b2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::pausemenucontrols
 --- !u!1 &1168954143
 GameObject:
   m_ObjectHideFlags: 0
@@ -10333,7 +10165,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2ab90cc6ed23d742bd86242b3d01550, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocketVisual
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocketVisual
   socket: {fileID: 1791370677}
   breakerOutput: {fileID: 0}
   lenses: {fileID: 458898226}
@@ -10621,7 +10453,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireVisual
   wire: {fileID: 1217190920}
   lenses: {fileID: 458898226}
-  controller: {fileID: 1880659636}
 --- !u!120 &1217190922
 LineRenderer:
   serializedVersion: 3
@@ -10867,7 +10698,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2ab90cc6ed23d742bd86242b3d01550, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocketVisual
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocketVisual
   socket: {fileID: 0}
   breakerOutput: {fileID: 1077926222}
   lenses: {fileID: 458898226}
@@ -11066,13 +10897,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1276379352}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88ff170133bf7164ca04eafd0651d3ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a708fa99ecc4b0db8fee448085a9d20, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocket
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocket
   box: {fileID: 1754316159}
   requiredColor: 0
-  behindGrate: 0
   connectedWire: {fileID: 0}
+  behindGrate: 0
 --- !u!1 &1276459901
 GameObject:
   m_ObjectHideFlags: 0
@@ -61820,7 +61651,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireVisual
   wire: {fileID: 1302667492}
   lenses: {fileID: 458898226}
-  controller: {fileID: 1880659636}
 --- !u!120 &1302667491
 LineRenderer:
   serializedVersion: 3
@@ -62049,7 +61879,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireVisual
   wire: {fileID: 1330708682}
   lenses: {fileID: 458898226}
-  controller: {fileID: 1880659636}
 --- !u!120 &1330708684
 LineRenderer:
   serializedVersion: 3
@@ -62300,12 +62129,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1344379743}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8897984a73b710e4fa45d7257d553c0d, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f74a573838c42c68bb913a492b10926, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.PowerBox
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOnePowerBox
   displayName: EXTENSION BOX
   network: {fileID: 792481633}
-  controller: {fileID: 1880659636}
   inputs:
   - {fileID: 1701097474}
   - {fileID: 578071503}
@@ -62317,6 +62145,7 @@ MonoBehaviour:
   breaker: 0
   breakerOn: 0
   requireAllInputs: 0
+  controller: {fileID: 1880659636}
   brokenInputLights: 0
   outputsBehindGrate: 0
   outputsViaTangleOnly: 0
@@ -62330,15 +62159,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1344379743}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4b629cc8efbdcb429d46793ef24dc56, type: 3}
+  m_Script: {fileID: 11500000, guid: 138bdf062c4242fca7382114d3baaf42, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireStation
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireStation
   _interactionArea: {fileID: 0}
-  kind: 0
   box: {fileID: 1344379746}
-  controller: {fileID: 1880659636}
   carrier: {fileID: 1156035765}
-  ui: {fileID: 469035336}
+  ui: {fileID: 1661057720}
+  kind: 0
+  controller: {fileID: 1880659636}
 --- !u!1 &1366370961
 GameObject:
   m_ObjectHideFlags: 0
@@ -62450,12 +62279,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1366370961}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8897984a73b710e4fa45d7257d553c0d, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f74a573838c42c68bb913a492b10926, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.PowerBox
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOnePowerBox
   displayName: RELAY
   network: {fileID: 792481633}
-  controller: {fileID: 1880659636}
   inputs:
   - {fileID: 2054697496}
   - {fileID: 1907819276}
@@ -62467,6 +62295,7 @@ MonoBehaviour:
   breaker: 0
   breakerOn: 0
   requireAllInputs: 0
+  controller: {fileID: 1880659636}
   brokenInputLights: 1
   outputsBehindGrate: 0
   outputsViaTangleOnly: 0
@@ -62480,15 +62309,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1366370961}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4b629cc8efbdcb429d46793ef24dc56, type: 3}
+  m_Script: {fileID: 11500000, guid: 138bdf062c4242fca7382114d3baaf42, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireStation
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireStation
   _interactionArea: {fileID: 0}
-  kind: 0
   box: {fileID: 1366370964}
-  controller: {fileID: 1880659636}
   carrier: {fileID: 1156035765}
-  ui: {fileID: 469035336}
+  ui: {fileID: 1661057720}
+  kind: 0
+  controller: {fileID: 1880659636}
 --- !u!1 &1379979240
 GameObject:
   m_ObjectHideFlags: 0
@@ -62537,7 +62366,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireVisual
   wire: {fileID: 1379979244}
   lenses: {fileID: 458898226}
-  controller: {fileID: 1880659636}
 --- !u!120 &1379979243
 LineRenderer:
   serializedVersion: 3
@@ -62788,15 +62616,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1389336208}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4b629cc8efbdcb429d46793ef24dc56, type: 3}
+  m_Script: {fileID: 11500000, guid: 138bdf062c4242fca7382114d3baaf42, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireStation
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireStation
   _interactionArea: {fileID: 0}
-  kind: 0
   box: {fileID: 1389336212}
-  controller: {fileID: 1880659636}
   carrier: {fileID: 1156035765}
-  ui: {fileID: 469035336}
+  ui: {fileID: 1661057720}
+  kind: 0
+  controller: {fileID: 1880659636}
 --- !u!114 &1389336212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62806,12 +62634,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1389336208}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8897984a73b710e4fa45d7257d553c0d, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f74a573838c42c68bb913a492b10926, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.PowerBox
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOnePowerBox
   displayName: CLOSET BOX
   network: {fileID: 792481633}
-  controller: {fileID: 1880659636}
   inputs:
   - {fileID: 339304016}
   - {fileID: 2088841284}
@@ -62824,6 +62651,7 @@ MonoBehaviour:
   breaker: 0
   breakerOn: 0
   requireAllInputs: 1
+  controller: {fileID: 1880659636}
   brokenInputLights: 0
   outputsBehindGrate: 0
   outputsViaTangleOnly: 0
@@ -63265,7 +63093,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireVisual
   wire: {fileID: 1442480335}
   lenses: {fileID: 458898226}
-  controller: {fileID: 1880659636}
 --- !u!120 &1442480334
 LineRenderer:
   serializedVersion: 3
@@ -63448,7 +63275,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2ab90cc6ed23d742bd86242b3d01550, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocketVisual
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocketVisual
   socket: {fileID: 0}
   breakerOutput: {fileID: 2015244221}
   lenses: {fileID: 458898226}
@@ -63619,7 +63446,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2ab90cc6ed23d742bd86242b3d01550, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocketVisual
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocketVisual
   socket: {fileID: 1952940443}
   breakerOutput: {fileID: 0}
   lenses: {fileID: 458898226}
@@ -63918,13 +63745,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1536772022}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88ff170133bf7164ca04eafd0651d3ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a708fa99ecc4b0db8fee448085a9d20, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocket
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocket
   box: {fileID: 1344379746}
   requiredColor: 2
-  behindGrate: 0
   connectedWire: {fileID: 0}
+  behindGrate: 0
 --- !u!4 &1536772024
 Transform:
   m_ObjectHideFlags: 0
@@ -67428,7 +67255,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireVisual
   wire: {fileID: 1624207379}
   lenses: {fileID: 458898226}
-  controller: {fileID: 1880659636}
 --- !u!120 &1624207378
 LineRenderer:
   serializedVersion: 3
@@ -67567,6 +67393,143 @@ MonoBehaviour:
   movable: 1
   enabledOutput: 1
   destination: {fileID: 0}
+--- !u!1001 &1661057718
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2051517821}
+    m_Modifications:
+    - target: {fileID: 3727509965361168603, guid: 3fa7e1249f9d423199248c5472115703, type: 3}
+      propertyPath: lenses
+      value: 
+      objectReference: {fileID: 458898226}
+    - target: {fileID: 3727509965361168603, guid: 3fa7e1249f9d423199248c5472115703, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1156035764}
+    - target: {fileID: 3727509965361168603, guid: 3fa7e1249f9d423199248c5472115703, type: 3}
+      propertyPath: carrier
+      value: 
+      objectReference: {fileID: 1156035765}
+    - target: {fileID: 3727509965361168603, guid: 3fa7e1249f9d423199248c5472115703, type: 3}
+      propertyPath: movement
+      value: 
+      objectReference: {fileID: 1156035763}
+    - target: {fileID: 3727509965361168603, guid: 3fa7e1249f9d423199248c5472115703, type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1880659636}
+    - target: {fileID: 3727509965361168603, guid: 3fa7e1249f9d423199248c5472115703, type: 3}
+      propertyPath: pauseControls
+      value: 
+      objectReference: {fileID: 1156035766}
+    - target: {fileID: 6910906600233068801, guid: 3fa7e1249f9d423199248c5472115703, type: 3}
+      propertyPath: m_Name
+      value: Wire Overlay
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483817588205346884, guid: 3fa7e1249f9d423199248c5472115703, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483817588205346884, guid: 3fa7e1249f9d423199248c5472115703, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483817588205346884, guid: 3fa7e1249f9d423199248c5472115703, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483817588205346884, guid: 3fa7e1249f9d423199248c5472115703, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483817588205346884, guid: 3fa7e1249f9d423199248c5472115703, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483817588205346884, guid: 3fa7e1249f9d423199248c5472115703, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483817588205346884, guid: 3fa7e1249f9d423199248c5472115703, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483817588205346884, guid: 3fa7e1249f9d423199248c5472115703, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483817588205346884, guid: 3fa7e1249f9d423199248c5472115703, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483817588205346884, guid: 3fa7e1249f9d423199248c5472115703, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483817588205346884, guid: 3fa7e1249f9d423199248c5472115703, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483817588205346884, guid: 3fa7e1249f9d423199248c5472115703, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483817588205346884, guid: 3fa7e1249f9d423199248c5472115703, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483817588205346884, guid: 3fa7e1249f9d423199248c5472115703, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483817588205346884, guid: 3fa7e1249f9d423199248c5472115703, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483817588205346884, guid: 3fa7e1249f9d423199248c5472115703, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483817588205346884, guid: 3fa7e1249f9d423199248c5472115703, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483817588205346884, guid: 3fa7e1249f9d423199248c5472115703, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483817588205346884, guid: 3fa7e1249f9d423199248c5472115703, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483817588205346884, guid: 3fa7e1249f9d423199248c5472115703, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3fa7e1249f9d423199248c5472115703, type: 3}
+--- !u!224 &1661057719 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7483817588205346884, guid: 3fa7e1249f9d423199248c5472115703, type: 3}
+  m_PrefabInstance: {fileID: 1661057718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1661057720 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3727509965361168603, guid: 3fa7e1249f9d423199248c5472115703, type: 3}
+  m_PrefabInstance: {fileID: 1661057718}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3188d04e305c40ce9176a8e923d3201a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireUI
 --- !u!1 &1674348308
 GameObject:
   m_ObjectHideFlags: 0
@@ -68294,13 +68257,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1701097473}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88ff170133bf7164ca04eafd0651d3ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a708fa99ecc4b0db8fee448085a9d20, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocket
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocket
   box: {fileID: 1344379746}
   requiredColor: 0
-  behindGrate: 0
   connectedWire: {fileID: 0}
+  behindGrate: 0
 --- !u!4 &1701097475
 Transform:
   m_ObjectHideFlags: 0
@@ -68359,13 +68322,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1713037110}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88ff170133bf7164ca04eafd0651d3ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a708fa99ecc4b0db8fee448085a9d20, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocket
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocket
   box: {fileID: 1754316159}
   requiredColor: 2
-  behindGrate: 0
   connectedWire: {fileID: 0}
+  behindGrate: 0
 --- !u!1 &1729813554
 GameObject:
   m_ObjectHideFlags: 0
@@ -68410,7 +68373,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2ab90cc6ed23d742bd86242b3d01550, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocketVisual
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocketVisual
   socket: {fileID: 800711171}
   breakerOutput: {fileID: 0}
   lenses: {fileID: 458898226}
@@ -68554,7 +68517,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2ab90cc6ed23d742bd86242b3d01550, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocketVisual
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocketVisual
   socket: {fileID: 2088841284}
   breakerOutput: {fileID: 0}
   lenses: {fileID: 458898226}
@@ -68794,15 +68757,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1754316155}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4b629cc8efbdcb429d46793ef24dc56, type: 3}
+  m_Script: {fileID: 11500000, guid: 138bdf062c4242fca7382114d3baaf42, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireStation
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireStation
   _interactionArea: {fileID: 0}
-  kind: 0
   box: {fileID: 1754316159}
-  controller: {fileID: 1880659636}
   carrier: {fileID: 1156035765}
-  ui: {fileID: 469035336}
+  ui: {fileID: 1661057720}
+  kind: 0
+  controller: {fileID: 1880659636}
 --- !u!114 &1754316159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68812,12 +68775,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1754316155}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8897984a73b710e4fa45d7257d553c0d, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f74a573838c42c68bb913a492b10926, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.PowerBox
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOnePowerBox
   displayName: ELEVATOR SOCKETS
   network: {fileID: 792481633}
-  controller: {fileID: 1880659636}
   inputs:
   - {fileID: 1276379354}
   - {fileID: 1713037112}
@@ -68825,6 +68787,7 @@ MonoBehaviour:
   breaker: 0
   breakerOn: 0
   requireAllInputs: 0
+  controller: {fileID: 1880659636}
   brokenInputLights: 0
   outputsBehindGrate: 0
   outputsViaTangleOnly: 0
@@ -68923,13 +68886,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1791370676}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88ff170133bf7164ca04eafd0651d3ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a708fa99ecc4b0db8fee448085a9d20, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocket
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocket
   box: {fileID: 752580153}
   requiredColor: 3
-  behindGrate: 0
   connectedWire: {fileID: 0}
+  behindGrate: 0
 --- !u!4 &1791370678
 Transform:
   m_ObjectHideFlags: 0
@@ -68998,7 +68961,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireVisual
   wire: {fileID: 1792369521}
   lenses: {fileID: 458898226}
-  controller: {fileID: 1880659636}
 --- !u!120 &1792369523
 LineRenderer:
   serializedVersion: 3
@@ -69241,15 +69203,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1794358260}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4b629cc8efbdcb429d46793ef24dc56, type: 3}
+  m_Script: {fileID: 11500000, guid: 138bdf062c4242fca7382114d3baaf42, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireStation
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireStation
   _interactionArea: {fileID: 0}
-  kind: 1
   box: {fileID: 1794358264}
-  controller: {fileID: 1880659636}
   carrier: {fileID: 1156035765}
-  ui: {fileID: 469035336}
+  ui: {fileID: 1661057720}
+  kind: 1
+  controller: {fileID: 1880659636}
 --- !u!114 &1794358264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69259,12 +69221,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1794358260}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8897984a73b710e4fa45d7257d553c0d, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f74a573838c42c68bb913a492b10926, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.PowerBox
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOnePowerBox
   displayName: BREAKER
   network: {fileID: 792481633}
-  controller: {fileID: 1880659636}
   inputs: []
   outputs:
   - {fileID: 2015244221}
@@ -69273,6 +69234,7 @@ MonoBehaviour:
   breaker: 1
   breakerOn: 0
   requireAllInputs: 0
+  controller: {fileID: 1880659636}
   brokenInputLights: 0
   outputsBehindGrate: 0
   outputsViaTangleOnly: 0
@@ -69453,7 +69415,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireVisual
   wire: {fileID: 1846951866}
   lenses: {fileID: 458898226}
-  controller: {fileID: 1880659636}
 --- !u!120 &1846951865
 LineRenderer:
   serializedVersion: 3
@@ -69857,7 +69818,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2ab90cc6ed23d742bd86242b3d01550, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocketVisual
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocketVisual
   socket: {fileID: 2054697496}
   breakerOutput: {fileID: 0}
   lenses: {fileID: 458898226}
@@ -69950,7 +69911,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 327d76e3dfa47c048a3782d7ae0d4dd3, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.PuzzleOnePowerController
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOnePowerController
   network: {fileID: 792481633}
   lenses: {fileID: 458898226}
   breaker: {fileID: 1794358264}
@@ -69959,7 +69920,7 @@ MonoBehaviour:
   grateBox: {fileID: 54123232}
   elevatorBox: {fileID: 1754316159}
   computerSocket: {fileID: 1791370677}
-  ui: {fileID: 469035336}
+  ui: {fileID: 1661057720}
   unlockMentalImmediately: 1
   onInspectTangle:
     m_PersistentCalls:
@@ -70231,15 +70192,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1889583156}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4b629cc8efbdcb429d46793ef24dc56, type: 3}
+  m_Script: {fileID: 11500000, guid: 138bdf062c4242fca7382114d3baaf42, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireStation
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireStation
   _interactionArea: {fileID: 0}
-  kind: 4
   box: {fileID: 1754316159}
-  controller: {fileID: 1880659636}
   carrier: {fileID: 1156035765}
-  ui: {fileID: 469035336}
+  ui: {fileID: 1661057720}
+  kind: 4
+  controller: {fileID: 1880659636}
 --- !u!114 &1889583160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70326,13 +70287,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1907819275}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88ff170133bf7164ca04eafd0651d3ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a708fa99ecc4b0db8fee448085a9d20, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocket
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocket
   box: {fileID: 1366370964}
   requiredColor: 0
-  behindGrate: 0
   connectedWire: {fileID: 2015244221}
+  behindGrate: 0
 --- !u!4 &1907819277
 Transform:
   m_ObjectHideFlags: 0
@@ -70579,7 +70540,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2ab90cc6ed23d742bd86242b3d01550, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocketVisual
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocketVisual
   socket: {fileID: 1713037112}
   breakerOutput: {fileID: 0}
   lenses: {fileID: 458898226}
@@ -70766,7 +70727,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireVisual
   wire: {fileID: 1943238326}
   lenses: {fileID: 458898226}
-  controller: {fileID: 1880659636}
 --- !u!120 &1943238328
 LineRenderer:
   serializedVersion: 3
@@ -70943,13 +70903,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1952940441}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88ff170133bf7164ca04eafd0651d3ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a708fa99ecc4b0db8fee448085a9d20, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocket
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocket
   box: {fileID: 133210671}
   requiredColor: 2
-  behindGrate: 0
   connectedWire: {fileID: 0}
+  behindGrate: 0
 --- !u!1001 &1976970164
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -71080,7 +71040,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireVisual
   wire: {fileID: 2015244221}
   lenses: {fileID: 458898226}
-  controller: {fileID: 1880659636}
 --- !u!120 &2015244223
 LineRenderer:
   serializedVersion: 3
@@ -71332,12 +71291,12 @@ Transform:
   m_Children:
   - {fileID: 792481634}
   - {fileID: 1880659637}
-  - {fileID: 469035337}
   - {fileID: 309205370}
   - {fileID: 1730516503}
   - {fileID: 542040879}
   - {fileID: 1599269930}
   - {fileID: 203298428}
+  - {fileID: 1661057719}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2054697495
@@ -71366,13 +71325,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2054697495}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88ff170133bf7164ca04eafd0651d3ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a708fa99ecc4b0db8fee448085a9d20, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocket
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocket
   box: {fileID: 1366370964}
   requiredColor: 2
-  behindGrate: 0
   connectedWire: {fileID: 1077926222}
+  behindGrate: 0
 --- !u!4 &2054697497
 Transform:
   m_ObjectHideFlags: 0
@@ -71492,13 +71451,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2088841282}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88ff170133bf7164ca04eafd0651d3ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a708fa99ecc4b0db8fee448085a9d20, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocket
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocket
   box: {fileID: 1389336212}
   requiredColor: 1
-  behindGrate: 0
   connectedWire: {fileID: 0}
+  behindGrate: 0
 --- !u!1 &2091727957
 GameObject:
   m_ObjectHideFlags: 0
@@ -71541,13 +71500,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2091727957}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88ff170133bf7164ca04eafd0651d3ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a708fa99ecc4b0db8fee448085a9d20, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.WireSocket
+  m_EditorClassIdentifier: Assembly-CSharp::Smogview.Wires.Legacy.PuzzleOneWireSocket
   box: {fileID: 54123232}
   requiredColor: 0
-  behindGrate: 1
   connectedWire: {fileID: 0}
+  behindGrate: 1
 --- !u!1 &2112664937
 GameObject:
   m_ObjectHideFlags: 0
