@@ -450,7 +450,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 658925473}
   m_CullTransparentMesh: 1
-  m_EditorClassIdentifier: Assembly-CSharp::EndScreenUI
 --- !u!1 &719760209
 GameObject:
   m_ObjectHideFlags: 0
