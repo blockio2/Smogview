@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndScreenUI : MonoBehaviour
 {
@@ -12,5 +13,10 @@ public class EndScreenUI : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void NextScene()
+    {
+        SceneManager.LoadScene("StartScreen");
     }
 }
