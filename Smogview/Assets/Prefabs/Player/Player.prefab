@@ -83,7 +83,6 @@ GameObject:
   - component: {fileID: 2025129293215477618}
   - component: {fileID: 6539566617131808741}
   - component: {fileID: 4382542875924978745}
-  - component: {fileID: 6312035005513428557}
   - component: {fileID: 7390681023208920063}
   m_Layer: 0
   m_Name: Player
@@ -256,7 +255,7 @@ MonoBehaviour:
     m_ActionName: 'Player/Interact[/Keyboard/e]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6312035005513428557}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LensSwitching, Assembly-CSharp
         m_MethodName: SetLens
         m_Mode: 0
@@ -318,22 +317,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   _moveSpeed: 4
   uiOpen: 0
---- !u!114 &6312035005513428557
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2782879772281036006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44467e0cd1c839d43865845f429e0be7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LensSwitching
-  _defaultCameraZoom: 6
-  _lensCameraZoom: 3
-  _zoomTransitionTime: 0.2
-  allLensObjects: []
 --- !u!114 &7390681023208920063
 MonoBehaviour:
   m_ObjectHideFlags: 0

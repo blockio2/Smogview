@@ -1,3 +1,4 @@
+using Smogview.UI;
 using System.Collections.Generic;
 using System.Threading;
 using Unity.VisualScripting;
@@ -24,14 +25,44 @@ public class LensManager : MonoBehaviour
 
     [SerializeField] private List<GameObject> allLensObjects = new List<GameObject>();
 
-    
+    private LensIndicatorUI _indicatorUI;
+
 
     lens currentlens;
     public lens CurrentLens => currentlens;
+    
+    
+    // old code that is being referenced by other scripts and can be deleted with the legacy wire scripts.
     // Puzzle controllers can gate a lens without replacing the team's smog or camera behavior.
     // A null predicate preserves normal lens availability in all other scenes.
     public System.Func<lens, bool> CanSelectLens { get; set; }
     public event System.Action<lens> LensChanged;
+
+    // New variables for managing current lens
+    private bool _physicalUnlocked = false;
+    private bool _socialUnlocked = false;
+    private bool _mentalUnlocked = false;
+    public bool PhysicalUnlocked { 
+        get { return _physicalUnlocked; }
+        set { _physicalUnlocked = value;
+            _indicatorUI.ActivateIcon(lens.Lphysical, value);
+        }
+    } 
+    public bool SocialUnlocked
+    {
+        get { return _socialUnlocked; }
+        set { _socialUnlocked = value;
+            _indicatorUI.ActivateIcon(lens.Lsocial, value);
+        }
+    }
+    public bool MentalUnlocked
+    {
+        get { return _mentalUnlocked; }
+        set { _mentalUnlocked = value;
+            _indicatorUI.ActivateIcon(lens.Lmental, value);
+        }
+    }
+    
 
     public enum lens {
         Ldefault,
@@ -45,6 +76,7 @@ public class LensManager : MonoBehaviour
         _mainCamera = FindAnyObjectByType<Camera>();
         _cameraZoom = _defaultCameraZoom;
         _mainCamera.orthographicSize = _defaultCameraZoom;
+        _indicatorUI = FindAnyObjectByType<LensIndicatorUI>();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -125,8 +157,6 @@ public class LensManager : MonoBehaviour
     /// <param name="Newlens">lens enum in lensSwitching</param>
     public void SetLens(lens Newlens)
     {
-        // Deny locked lenses before changing world objects, the HUD, or the camera zoom.
-        if (CanSelectLens != null && !CanSelectLens(Newlens)) return;
         currentlens = Newlens;
         ActivateLens();
 
@@ -163,15 +193,18 @@ public class LensManager : MonoBehaviour
                 break;
 
             case "2":
-                SetLens(lens.Lphysical);
+                if (PhysicalUnlocked)
+                    SetLens(lens.Lphysical);
                 break;
 
             case "3":
-                SetLens(lens.Lsocial);
+                if(SocialUnlocked)
+                    SetLens(lens.Lsocial);
                 break;
 
             case "4":
-                SetLens(lens.Lmental);
+                if(MentalUnlocked)
+                    SetLens(lens.Lmental);
                 break;
 
             default:

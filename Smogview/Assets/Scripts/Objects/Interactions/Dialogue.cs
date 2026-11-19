@@ -35,7 +35,7 @@ public class Dialogue : Interactable
     }
     public void OnDisable()
     {
-        EndDialogue();
+        //EndDialogue();
     }
 
     /// <summary>
@@ -52,6 +52,7 @@ public class Dialogue : Interactable
     /// </summary>
     public void ShowDialogue()
     {
+
         _npcTextArea.SetActive(true);
         _npcTextArea.transform.position = new Vector2(transform.position.x + 2.6f, transform.position.y - 0.2f);
 
