@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class pausemenucontrols : MonoBehaviour
 {
-    [SerializeField] GameObject pauseScreen;
-    [SerializeField] GameObject lensScreen;
+    [SerializeField] private GameObject pauseScreen;
+    [SerializeField] private GameObject lensScreen;
 
     public bool otherUiOpen = false;
 
     void Awake()
     {
-     //   Pause();
+  
     }
 
 
